@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <SCRIPT LANGUAGE="Javascript">
+        var precioOrdenador,nombre;
+        precioOrdenador=150000;
+        function intro() {
+            document.write("<br>");
+        }
+        //Calcular el 16% del precio del ordenador y mostar por pantalla
+        var precioConDescuento = precioOrdenador * 0.16;
+        document.write("1.1.- " + precioConDescuento);
+        intro();
+        //Mostrar una expresión lógica con operadores de comparación cuyo resultado sea True
+        document.write("1.2.- ");
+        document.write(1 + 1 == 2);
+        intro();
+        //Mostrar una expresión lógica con operadores de comparación cuyo resultado sea False
+        document.write("1.3.- ");
+        document.write(1 + 1 == 3);
+        intro();
+        //Mostrar una expresión lógica con operadores lógicos cuyo resultado sea 
+        document.write("1.4.- ");
+        document.write(true && true == true);
+        intro();
+        //Mostrar una expresión lógica con operadores lógicos cuyo resultado sea False
+        document.write("1.5.- ");
+        document.write(false && true == true);
+        intro();
+        /*Pedir el nombre de un animal por pantalla y después mostrar el tipo de la 
+            variable en la que se almacenó el dato y el de "precioOrdenador*/
+        document.write("1.6.- ");
+        var nombre = prompt("Escribe el nombre de un animal: ");
+        document.write("El nombre del animal se almacenó en una variable de tipo: " + typeof nombre + " y el precio del ordenador en tipo: " + typeof precioOrdenador);
+        intro();
+        // 2. Escribe los números pares de 0 a 30.
+        document.write("2.- ");
+        for(var i = 0; i <= 30; ++i){
+            if(i % 2 == 0){
+                document.write(i + " ");
+            }
+        }
+        intro();
+        // 3. Escribe las potencias de 2 hasta 3000.
+        document.write("3.- ");
+        var num = 1;
+        while(num <= 3000){
+            document.write(num);
+            num *= 2;
+            if(num <= 3000)
+                document.write(" ")
+        }
+        intro();
+        // 4. Pide una clave de acceso hasta que se corresponda con una dada (codificarlos con while).
+        var password = "1234";
+        var passwordPrompt = prompt("Introduce una clave de acceso: ");
+        while (passwordPrompt != password) {
+            alert("Clave incorrecta. Inténtalo de nuevo.");
+            passwordPrompt = prompt("Por favor, ingresa la clave de acceso:");
+        }
+        if(password == passwordPrompt)
+            alert("Clave correcta");
+        // 5. Variación del anterior pida la password y permitir tres respuestas incorrectas.  
+        var password2 = "1234";
+        var passwordPrompt2 = prompt("Introduce una clave de acceso: ");
+        var tries = 1;
+        while (passwordPrompt2 != password2) {
+            alert("Clave incorrecta. Inténtalo de nuevo.");
+            ++tries;
+            if(tries <= 3){
+                passwordPrompt2 = prompt("Por favor, ingresa la clave de acceso:");
+            }
+            else{
+                alert("Has agotado los intentos");
+                break;
+            }
+        }
+        if(password2 == passwordPrompt2)
+            alert("Clave correcta");
+        // 6. Presenta todos los números pares del 0 al 50 excepto los que sean múltiplos de 3 (pista usar for y continue).
+        document.write("6.- ");
+        for(var i = 0; i <= 50; ++i){
+            if(i % 3 != 0 && i % 2 == 0)
+                document.write(i + " ");
+        }
+        intro();
+        // 7. Mostar la versión de JavaScript que admite nuestro navegador (pista sólo ejecutará el script de la versión que admite).
+        document.write("7.- ");
+        document.write("Versión de JavaScript admitida por su navegador: " + navigator.appVersion);
+        intro();
+        // 8. Se introducen  tres notas de un alumno, si la nota media es mayor o igual a cinco mostrar el mensaje 'Promociona'. 
+            // Tener en cuenta que para obtener el promedio debemos operar suma=nota1+nota2+nota3; y luego dividir por tres =suma/3.
+        document.write("8.- ");
+        var notas = [prompt("Introduce la primera nota: "), prompt("Introduce la segunda nota: "), prompt("Introduce la tercera nota: ")];
+        var media = (notas[0] + notas[1] + notas[2]) / 3;
+        if(media >= 5){
+            document.write("Promociona");
+        } else{
+            document.write("No promociona");
+        }
+        intro();
+        // 9. Se introduce  por teclado un número positivo de uno o dos dígitos (1..99) mostrar un mensaje indicando si el número tiene 
+            // uno o dos dígitos (recordar convertir a entero con parseInt para preguntar posteriormente por una variable entera).
+        var num = 0;
+        var counter = 0;
+        while(num > 99 || num <= 0)
+            num = parseInt(prompt("Introduce un número entre 1 y 99: "));
+        for(num; Math.floor(num) > 0; num /= 10)
+            counter += 1;
+        document.write("Dígitos del numero: " + counter);
+        intro();
+        // 10. De un solicitante de empleo, que realizó un test de capacitación, se obtuvo la siguiente información: 
+            // nombre del demandante, cantidad total de preguntas que se realizaron y cantidad de preguntas que contestó 
+            // correctamente. Se pide confeccionar un programa que pida los datos del demandante e informe del nivel del mismo 
+            // según el porcentaje de respuestas correctas que ha obtenido, y sabiendo que:
+            // Nivel alto: Porcentaje>=90%.
+            // Nivel medio: Porcentaje>=75% y <90%.
+            // Nivel regular: Porcentaje>=50% y <75%.
+            // Fuera de nivel: Porcentaje<50%.
+        document.write("10.- ");
+        var nombre = prompt("Introduce el nombre del solicitante de empleo: ");
+        var totalPreguntas = 0;
+        var preguntasCorrectas = 1;
+        while(totalPreguntas < preguntasCorrectas){
+            totalPreguntas = parseInt(prompt("Preguntas totales: "));
+            preguntasCorrectas = parseInt(prompt("Preguntas correctas: "));
+            if(preguntasCorrectas / totalPreguntas >= 0.9)
+                document.write("Nivel alto");
+            else if(preguntasCorrectas / totalPreguntas >= 0.75 && preguntasCorrectas / totalPreguntas <= 0.9)
+                document.write("Nivel medio");
+            else if(preguntasCorrectas / totalPreguntas >= 0.5 && preguntasCorrectas / totalPreguntas <= 0.75)
+                document.write("Nivel regular");
+            else if(preguntasCorrectas / totalPreguntas <= 0.5)
+                document.write("Fuera de nivel");
+        }
+        intro();
+        
+        // 11. Realizar un programa que pida una fecha cualquiera, luego verificar si dicha fecha corresponde a Navidad.
+        var day = prompt("Dime un día: ");
+        var month = prompt("Dime un mes: ");
+        var year = prompt("Dime un año: ");
+        var fecha = day + "/" + month;            
+        var navidad = "25/12";
+        if (fecha == navidad){
+            alert("Es navidad");
+        }
+        else{
+            alert("No es navidad");
+        }
+
+        // 12. Escribir un programa que pida la coordenada de un punto en el plano, es decir dos valores enteros x e y. 
+                // Posteriormente imprimir en pantalla en qué cuadrante se ubica dicho punto. (1º Cuadrante si x > 0 Y y > 0 , 
+                // 2º Cuadrante: x < 0 Y y > 0, etc.)
+        var x = prompt("Coordenada X");
+        var y = prompt("Coordenada Y");
+        if(x > 0 && y > 0){
+            document.write("1º cuadrante");
+        }else if(x > 0 && y < 0){
+            document.write("2º cuadrante");
+        }else if(x < 0 && y < 0){
+            document.write("3º cuadrante");
+        }else{
+            document.write("4º cuadrante");
+        }
+
+        // 13. De un operario se conoce su sueldo y los años de antigüedad. Se pide confeccionar un programa que 
+            // lea los datos de entrada e informe
+            // a) Si el sueldo es inferior a 500 y su antigüedad es igual o superior a 10 años, otorgarle un aumento
+                // del 20 %, mostrar el sueldo a pagar.
+            // b) Si el sueldo es inferior a 500 pero su antigüedad es menor a 10 años, otorgarle un aumento de 5 %.
+            // c) Si el sueldo es mayor o igual a 500 mostrar el sueldo en la página sin cambios.
+        var sueldo = prompt("Dime su sueldo");
+        var antiguedad = prompt("Dime su antiguedad");
+        if(sueldo < 500 && antiguedad >= 10){
+            sueldo = sueldo + (sueldo * 0.2);
+            document.write("Su nuevo sueldo será de " + sueldo);
+        }else if(suedlo < 500 && antiguedad <= 10){
+            sueldo = sueldo + (sueldo * 0.05);
+            document.write("Su nuevo sueldo será de " + sueldo);
+        }else if(sueldo >= 500){
+            document.write("Su nuevo sueldo será de " + sueldo);
+        }
+
+        // 14. Pedir  por teclado el nombre de un color (rojo, verde o azul), luego rellenar el fondo de la ventana con dicho color.
+        var color = prompt("Dime un color");
+        color = color.toLowerCase();
+        document.body.style.backgroundColor = "red";
+
+        // 15. Pedir la introducción de alguna de estas palabras (casa, mesa, perro, gato) luego mostrar la palabra traducida en inglés. 
+            // Es decir, si se introduce 'casa' debemos mostrar el texto 'house' en la página.
+        var palabra = prompt("Introduce una palabra (casa, mesa, perro, gato)");
+        var traducciones = {
+            "casa": "house",
+            "mesa": "table",
+            "perro": "dog",
+            "gato": "cat"
+        };
+
+        if (traducciones.hasOwnProperty(palabra)) {
+            alert("La traducción de '" + palabra + "' es '" + traducciones[palabra] + "'.");
+        } else {
+            alert("Palabra no encontrada en las traducciones.");
+        }
+
+        // 16. En un banco se procesan datos de las cuentas corrientes de sus clientes. De cada cuenta corriente se conoce: 
+            // número de cuenta, nombre del cliente y saldo actual. La introducción de datos debe finalizar al int. un valor 
+            // negativo en el número de cuenta.
+            // Se pide confeccionar un programa que lea los datos de las cuentas corrientes e informe:
+            // a) De cada cuenta: número de cuenta, nombre del cliente y estado de la cuenta según su saldo, sabiendo que:
+                // Estado de la cuenta
+                // 'Acreedor' si el saldo es > 0.
+                // 'Deudor' si el saldo es < 0.
+                // 'Nulo' si el saldo es = 0.
+        // Declaración de variables
+        var numeroCuenta;
+        var nombreCliente;
+        var saldo;
+
+        // Inicialización de bucle para ingresar datos de cuentas
+        while (true) {
+        // Solicitar número de cuenta
+        numeroCuenta = prompt("Ingrese el número de cuenta (ingrese un valor negativo para finalizar):");
+
+        // Convertir número de cuenta a número
+        numeroCuenta = parseInt(numeroCuenta);
+
+        // Verificar si se debe finalizar la introducción de datos
+        if (numeroCuenta < 0) {
+            break;
+        }
+        // Solicitar nombre del cliente
+        nombreCliente = prompt("Ingrese el nombre del cliente:");
+        // Solicitar saldo
+        saldo = parseFloat(prompt("Ingrese el saldo actual:"));
+
+        // Determinar estado de la cuenta
+        var estadoCuenta;
+        if (saldo > 0) {
+            estadoCuenta = "Acreedor";
+        } else if (saldo < 0) {
+            estadoCuenta = "Deudor";
+        } else {
+            estadoCuenta = "Nulo";
+        }
+
+        // Mostrar información de la cuenta
+        document.write("Número de cuenta: " + numeroCuenta);
+        document.write("Nombre del cliente: " + nombreCliente);
+        document.write("Estado de la cuenta: " + estadoCuenta);
+        }
+
+        // 17. Se realizó un censo local y se desea procesar la información obtenida en dicho censo. De cada una de las personas 
+            // censadas se tiene la siguiente información: número de documento de identidad, edad y sexo ('femenino' o 'masculino').
+            // Se pide confeccionar un programa que lea los datos de cada persona censada (para finalizar int. el valor cero en el 
+                //número de documento) e indicar:  
+                // a)	Cantidad total de personas censadas.
+                // b)	Cantidad de varones.
+                // c)	Cantidad de mujeres.
+                // d)	Cantidad de varones cuya edad varía entre 18 y 67 años.
+
+        var totalPersonas = 0;
+        var varones = 0;
+        var mujeres = 0;
+        var varonesEdad18a67 = 0;
+
+        while (true) {
+            var documento = prompt("Ingrese el número de documento (introduzca 0 para finalizar):");
+            documento = parseInt(documento);
+            if (documento == 0) {
+                break;
+            }
+
+            var edad = parseInt(prompt("Ingrese la edad:"));
+            var sexo = prompt("Ingrese el sexo (femenino o masculino):").toLowerCase();
+            if (sexo === "masculino") {
+                varones++;
+                if (edad >= 18 && edad <= 67) {
+                    varonesEdad18a67++;
+                } else if (sexo === "femenino") {
+                    mujeres++;
+                } else {
+                    alert("Sexo no válido. Por favor, ingrese 'femenino' o 'masculino'.");
+                    continue;
+                }
+            totalPersonas++;
+            }
+        }
+        document.write("Cantidad total de personas censadas: " + totalPersonas);
+        document.write("Cantidad de varones: " + varones);
+        document.write("Cantidad de mujeres: " + mujeres);
+        document.write ("Cantidad de varones cuya edad varía entre 18 y 67 años: " + varonesEdad18a67);
+
+
+       </SCRIPT>
+</body>
+</html>

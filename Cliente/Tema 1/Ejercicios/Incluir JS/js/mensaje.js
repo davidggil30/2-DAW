@@ -1,0 +1,1 @@
+alert("Prueba de JavaScript"); // archivo mensaje.js en la carpeta js

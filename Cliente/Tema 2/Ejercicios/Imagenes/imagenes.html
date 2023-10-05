@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script language="javascript">
+        var fotos= new Array("imagen0.jpg", "imagen1.jpg", "imagen3.jpg", "imagen4.jpg");
+        /*for(i=0; i<fotos.length; i++){
+            fotos[i] = "image" + i + ".jpg";
+        }*/
+        var actual = 0;
+
+        function Siguiente(){
+            document.visor.src = fotos[++actual % fotos.length];
+        }
+        function Anterior(){
+            if(actual == 0){
+                actual = fotos.length;
+            }
+            document.visor.src = fotos[--actual % fotos.length];
+        }
+        function Ultima(){
+            actual = fotos.length - 1;
+            document.visor.src = fotos[actual];
+        }
+        function Primera(){
+            actual = 0;
+            document.visor.src = fotos[actual];
+        }
+    </script>
+</header>
+</head>
+<body>
+    <header  style="size: 6px; color: blue; text-align: center;">
+        <h1>Visor de imagenes</h1>
+    <hr style="color: blue;">
+    <form>
+        <table>
+            <tr>
+                <td>
+                    <image src="imagen0.jpg" name="visor" height="150" width="165"></image>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" onclick="Primera()" value=" |<< ">
+                </td>
+                <td>
+                    <input type="button" onclick="Anterior()" value=" << ">
+                </td>
+                <td>
+                    <input type="button" onclick="Siguiente()" value=" >> ">
+                </td>
+                <td>
+                    <input type="button" onclick="Ultima()" value=" >>| ">
+                </td>
+            </tr>
+        </table>
+    </form>
+    <hr style="color: blue;">
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/
+xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <noscript>
+        <p>Bienvenido a Mi Sitio</p>
+        <p>La página que estás viendo requiere para su funcionamiento el uso de JavaScript.
+            Si lo has deshabilitado intencionadamente, por favor vuelve a activarlo.</p>
+    </noscript>
+
+    <script>
+        var numero1 = 5;
+        var numero2 = 8;
+        if (numero1 > numero2) {
+            alert("numero1 no es mayor que numero2");
+        }
+        if (numero2 > 0) {
+            alert("numero2 es positivo");
+        }
+        if (numero1 > 0 || numero1 != 0) {
+            alert("numero1 es negativo o distinto de cero");
+        }
+        if (++numero1 < numero2 || ++numero1 != numero2) {
+            alert("Incrementar en 1 unidad el valor de numero1 no lo hace mayor o igual que numero2");
+        }
+    </script>
+
+    <script type="text/javascript">
+        var number;
+        var result = 1;
+        for(number = prompt("Introduce un número: "); number > 0; number--){
+            alert(result *= number);
+        }
+    </script>
+
+    <script type="text/javascript">
+        var num = 0;
+        while(num < 1000){
+            num += parseInt(Math.random() * 100);
+            alert("Número: " + num);
+        }
+    </script>
+
+    <script type="text/javascript">
+        for(var num = 0; num <= 9; num++){
+            var q = prompt("Numero: " + num + "¿Quiere continuar?");
+            if(q == "no"){
+                break;
+        }
+    }
+    </script>
+
+    <script type="text/javascript">
+        for(var num1 = 1; num1 < 10; ++num1){
+            for(var num2 = 1; num2 < 10; ++num2){
+                var result = num1 * num2;
+                document.write(num1 + "*" + num2 + "=" + result);
+            }
+            document.write("<br>");
+        }
+    </script>
+
+    <script type="text/javascript">
+        for(var i = 6; i > 0; --i){
+            document.write("<H" + i + ">" + "Encabezado de nivel " + i + "<H" + i + ">")  ;
+        }
+    </script>
+
+    <script type="text/javascript">
+        var num = prompt("Introduce un día: ");
+        num = parseInt(num);
+        switch(num){
+            case 1:
+                alert("Es lunes");
+                break;
+            case 2:
+                alert("Es martes"); 
+                break; 
+            case 3:
+                alert("Es miercoles");
+                break;
+            case 4:
+                alert("Es jueves");
+                break;
+            case 5:
+                alert("Es viernes");
+                break;
+            case 6:
+                alert("Es sabado");
+                break;
+            case 7:
+                alert("Es domingo");
+                break;
+            default:
+                alert("Ese día no existe");
+        }
+    </script>
+
+    <script type="text/javascript">
+        var credit = 1000;
+        var price;
+        while(credit > 0){
+            price = prompt("Te quedan " + credit + ", ¿Cuánto vale el producto?");
+            credit = credit - price;
+            if(credit <= 0){
+                alert("Te has quedado sin dinero");
+            }
+        }
+    </script>
+
+    <script type="text/JavaScript">
+        var credit = 1000;
+        var price;
+        while(credit > 0){
+            price = prompt("Te quedan " + credit + ", ¿Cuánto vale el producto?");
+            credit = credit - price;
+            var q = prompt("¿Desea seguir comprando?");
+            if(q == "No" || q == "NO" || q == "no" || q == "nO"){
+                break;
+            }
+            if(credit <= 0){
+                alert("Te has quedado sin dinero");
+            }
+        }
+    </script>
+</body>
+</html>
