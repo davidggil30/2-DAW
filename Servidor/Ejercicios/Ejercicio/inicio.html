@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="GET" action="recogedatos.php">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre">
+        <br>
+        <label for="edad">Edad:</label>
+        <input type="number" name="edad" id="edad">
+        <br>
+        <label for="sexo">Sexo</label>
+        <select name="sexo" id="sexo">
+            <option value="Hombre">Hombre</option>
+            <option value="Mujer">Mujer</option>
+            <option value="Otro">Otro</option>
+        </select>
+        <br>
+        <label><input type="radio" name="info" id="info" value="Si">Quiero recibir información</label>
+        <br>
+        <label><input type="radio" name="info" id = "info" value="No">No quiero recibir información</label>
+        <br>
+        <label for="color">Color</label>
+        <input type="color" name="color" id="color">
+        <br>
+        <input type="submit">
+    </form>
+</body>
+</html>
