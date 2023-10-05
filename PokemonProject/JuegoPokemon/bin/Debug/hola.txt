@@ -1,0 +1,11 @@
+Información de la partida:
+Nombre: hola
+Entrenador: 2
+Género: Chica
+ID: 1159211534
+Número secreto: 731870997
+PokeDólares: 10000
+Puntos de batalla: 10000
+PokeMillas: 10000
+Fecha de inicio: 22/05/2023 10:09:42
+Equipo Pokémon:

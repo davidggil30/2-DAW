@@ -1,0 +1,297 @@
+﻿
+
+
+ATRIBUTOS SPECIESPOKEMON
+// Atributos
+        //string specie; // Nombre del POkéMON 
+        //string type; // Tipo del POkéMON
+        //int id; // ID del POKéMON 
+        //char gender; // Género del POkéMON -
+        //int level; // Nivel del POkéMON -
+        //int maxHP; // Máximo de vida del POkéMON  -
+        //int currentHP; // VIda actual del POkéMON -
+        //int attack; // Ataque del POkéMON -
+        //int specialAttack; //Ataque especial del POKéMON -
+        //int defense; // Defensa del POkéMON -
+        //int specialDefense; //Defensa especial del POKéMON -
+        //int speed; // Velocidad del POkéMON -
+        //int rc; // ratio de captura  -
+        ////DateTime? date; // Fecha para saber el día y la hora de captura. DateTime?: si la fecha es nula  -
+
+        ////string eo; // -
+
+
+CAMBIAR DE POKEMON EN COMBATE
+//int option = IO.intToString();
+            //switch (option){
+            //    case 1:
+            //        if(pokemonFighter == myPokemons[0]) // Si el que he elegido es el mismo que el que tengo actualmente peleando
+            //        {
+            //            IO.slowType("\n ¡Has decidido seguir luchando con el mismo POKéMON, " + pokemonFighter.getSpecie() + "! \n", timeSleep);
+            //            damage(rivalPokemon, pokemonFighter); // y el POKéMON rival ataca al nuestro
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        else // si elegimos otro
+            //        {
+            //            pokemonFighter = myPokemons[0];
+            //            IO.slowType("\n ¡Tu nuevo POKéMON para el combate va a ser " + pokemonFighter.getSpecie() + "!\n", timeSleep);
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        break;
+            //    case 2:
+            //        if (pokemonFighter == myPokemons[1]) // Si elegimos el mismo POKéMON que tenemos actualmente
+            //        {
+            //            IO.slowType("\n ¡Has decidido seguir luchando con el mismo POKéMON, " + pokemonFighter.getSpecie() + "! \n", timeSleep);
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        else // Si elegimos otro de la bolsa
+            //        {
+            //            if (myPokemons[1] == null) // Si en la posición que hemos elegido no tenemos nigún POKéMON, tenemos que elegir otro
+            //            {
+            //                IO.slowType("\n En esta posición no tenemos ningún POKéMON, elige otra. \n", timeSleep);
+            //                return changePokemon(pokemonFighter, rivalPokemon);
+            //            }
+            //            pokemonFighter = myPokemons[1]; // Si tenemos un POKéMON en esa posición, empezaremos a combatir con él
+            //            IO.slowType("\n ¡Tu nuevo POKéMON para el combate va a ser " + pokemonFighter.getSpecie() + "!\n", timeSleep);
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        break;
+            //    case 3:
+            //        if (pokemonFighter == myPokemons[2])
+            //        {
+            //            IO.slowType("\n ¡Has decidido seguir luchando con el mismo POKéMON, " + pokemonFighter.getSpecie() + "! \n", timeSleep);
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        else
+            //        {
+            //            if (myPokemons[2] == null)
+            //            {
+            //                IO.slowType("\n En esta posición no tenemos ningún POKéMON, elige otra. \n", timeSleep);
+            //                return changePokemon(pokemonFighter, rivalPokemon);
+            //            }
+            //            pokemonFighter = myPokemons[2];
+            //            IO.slowType("\n ¡Tu nuevo POKéMON para el combate va a ser " + pokemonFighter.getSpecie() + "!\n", timeSleep);
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        break;
+            //    case 4:
+            //        if (pokemonFighter == myPokemons[3])
+            //        {
+            //            IO.slowType("\n ¡Has decidido seguir luchando con el mismo POKéMON, " + pokemonFighter.getSpecie() + "! \n", timeSleep);
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        else
+            //        {
+            //            if (myPokemons[3] == null)
+            //            {
+            //                IO.slowType("\n En esta posición no tenemos ningún POKéMON, elige otra. \n", timeSleep);
+            //                return changePokemon(pokemonFighter, rivalPokemon);
+            //            }
+            //            pokemonFighter = myPokemons[3];
+            //            IO.slowType("\n ¡Tu nuevo POKéMON para el combate va a ser " + pokemonFighter.getSpecie() + "!\n", timeSleep);
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        break;
+            //    case 5:
+            //        if (pokemonFighter == myPokemons[4])
+            //        {
+            //            IO.slowType("\n ¡Has decidido seguir luchando con el mismo POKéMON, " + pokemonFighter.getSpecie() + "! \n", timeSleep);
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        else
+            //        {
+            //            if (myPokemons[4] == null)
+            //            {
+            //                IO.slowType("\n En esta posición no tenemos ningún POKéMON, elige otra. \n", timeSleep);
+            //                return changePokemon(pokemonFighter, rivalPokemon);
+            //            }
+            //            pokemonFighter = myPokemons[4];
+            //            IO.slowType("\n ¡Tu nuevo POKéMON para el combate va a ser " + pokemonFighter.getSpecie() + "!\n", timeSleep);
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        break;
+            //    case 6:
+            //        if (pokemonFighter == myPokemons[5])
+            //        {
+            //            IO.slowType("\n ¡Has decidido seguir luchando con el mismo POKéMON, " + pokemonFighter.getSpecie() + "! \n", timeSleep);
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        else
+            //        {
+            //            if (myPokemons[5] == null)
+            //            {
+            //                IO.slowType("\n En esta posición no tenemos ningún POKéMON, elige otra. \n", timeSleep);
+            //                return changePokemon(pokemonFighter, rivalPokemon);
+            //             }
+            //            pokemonFighter = myPokemons[5];
+            //            IO.slowType("\n ¡Tu nuevo POKéMON para el combate va a ser " + pokemonFighter.getSpecie() + "!\n", timeSleep);
+            //            pokemonFighter.setCurrentHP(pokemonFighter.getCurrentHP() - damage(rivalPokemon, pokemonFighter));
+            //            IO.slowType(" Tu pokemon " + pokemonFighter.getSpecie() + " tiene " + pokemonFighter.getCurrentHP() + " de vida actual.\n", timeSleep);
+            //            return pokemonFighter;
+            //        }
+            //        break;
+            //    default:
+            //        IO.slowType("\n Introduce una opción correcta: ", timeSleep);
+            //        return changePokemon(pokemonFighter, rivalPokemon);
+            //        break;
+            //}
+
+CAPTURAR POKÉMON Y AÑADIR A MI EQUIPO
+ /*switch (pos) // Añadimos el nuevo POKéMON en la posición elegida del equipo
+                    {
+                        case 1: 
+                            myPokemons[0] = rivalPokemon; // Añadimos el POKéMON capturado en la posición que creamos
+                            rivalPokemon = new IndividualPokemon(new SpeciesPokemon(rivalPokemon.getSpecie(), rivalPokemon.getType(), rivalPokemon.getId(), rivalPokemon.getLevel(), rivalPokemon.getMaxHP(), rivalPokemon.getCurrentHP(), rivalPokemon.getAttack(), rivalPokemon.getSpecialAttack(), rivalPokemon.getDefense(), rivalPokemon.getSpecialDefense(), rivalPokemon.getSpeed())); // Al POKéMON añadido le ponemos los atributos con los que se ha quedado tras la captura del POKéMON
+                            rivalPokemon.setDate(DateTime.Now); // y le establecemos la fecha en la que le añadimos a nuestro equipo
+                            rivalPokemon.setEo(trainer.getId());
+                            break;
+                        case 2:
+                            myPokemons[1] = rivalPokemon;
+                            rivalPokemon = new IndividualPokemon(new SpeciesPokemon(rivalPokemon.getSpecie(), rivalPokemon.getType(), rivalPokemon.getId(), rivalPokemon.getLevel(), rivalPokemon.getMaxHP(), rivalPokemon.getCurrentHP(), rivalPokemon.getAttack(), rivalPokemon.getSpecialAttack(), rivalPokemon.getDefense(), rivalPokemon.getSpecialDefense(), rivalPokemon.getSpeed())); // Al POKéMON añadido le ponemos los atributos con los que se ha quedado tras la captura del POKéMON
+                            rivalPokemon.setEo(trainer.getId());
+                            break;
+                        case 3:
+                            myPokemons[2] = rivalPokemon;
+                            rivalPokemon = new IndividualPokemon(new SpeciesPokemon(rivalPokemon.getSpecie(), rivalPokemon.getType(), rivalPokemon.getId(), rivalPokemon.getLevel(), rivalPokemon.getMaxHP(), rivalPokemon.getCurrentHP(), rivalPokemon.getAttack(), rivalPokemon.getSpecialAttack(), rivalPokemon.getDefense(), rivalPokemon.getSpecialDefense(), rivalPokemon.getSpeed())); // Al POKéMON añadido le ponemos los atributos con los que se ha quedado tras la captura del POKéMON
+                            rivalPokemon.setEo(trainer.getId());
+                            break;
+                        case 4:
+                            myPokemons[3] = rivalPokemon;
+                            rivalPokemon = new IndividualPokemon(new SpeciesPokemon(rivalPokemon.getSpecie(), rivalPokemon.getType(), rivalPokemon.getId(), rivalPokemon.getLevel(), rivalPokemon.getMaxHP(), rivalPokemon.getCurrentHP(), rivalPokemon.getAttack(), rivalPokemon.getSpecialAttack(), rivalPokemon.getDefense(), rivalPokemon.getSpecialDefense(), rivalPokemon.getSpeed())); // Al POKéMON añadido le ponemos los atributos con los que se ha quedado tras la captura del POKéMON
+                            rivalPokemon.setEo(trainer.getId());
+                            break;
+                        case 5:
+                            myPokemons[4] = rivalPokemon;
+                            rivalPokemon = new IndividualPokemon(new SpeciesPokemon(rivalPokemon.getSpecie(), rivalPokemon.getType(), rivalPokemon.getId(), rivalPokemon.getLevel(), rivalPokemon.getMaxHP(), rivalPokemon.getCurrentHP(), rivalPokemon.getAttack(), rivalPokemon.getSpecialAttack(), rivalPokemon.getDefense(), rivalPokemon.getSpecialDefense(), rivalPokemon.getSpeed())); // Al POKéMON añadido le ponemos los atributos con los que se ha quedado tras la captura del POKéMON
+                            rivalPokemon.setEo(trainer.getId());
+                            break;
+                        case 6:
+                            myPokemons[5] = rivalPokemon;
+                            rivalPokemon = new IndividualPokemon(new SpeciesPokemon(rivalPokemon.getSpecie(), rivalPokemon.getType(), rivalPokemon.getId(), rivalPokemon.getLevel(), rivalPokemon.getMaxHP(), rivalPokemon.getCurrentHP(), rivalPokemon.getAttack(), rivalPokemon.getSpecialAttack(), rivalPokemon.getDefense(), rivalPokemon.getSpecialDefense(), rivalPokemon.getSpeed())); // Al POKéMON añadido le ponemos los atributos con los que se ha quedado tras la captura del POKéMON
+                            rivalPokemon.setEo(trainer.getId());
+                            break;
+                    }*/
+
+CAPTURAR POKÉMON
+functions.slowType("\n ¿Dónde desea guardar tu POKéMON?: \n\t 1.- Equipo. \n\t 2.- Cajas", timeSleep);
+            int place = functions.intToString();
+            Console.WriteLine();
+            do
+            {
+                switch (place)
+                {
+                    case 1:
+                        functions.slowType("\n ¿En qué posición quiere guardar el POKéMON?", timeSleep);
+                        int pos = functions.intToString();
+                        Console.WriteLine();
+                        for (int i = 0; i < myPokemons.Length; ++i)
+                        {
+                            if (myPokemons[pos - 1] == null) // Si la posición está vacía
+                            {
+
+                                myPokemons[pos - 1] = rivalPokemon; // Añadimos el POKéMON capturado en la posición que creamos
+                                myPokemons[pos - 1] = new IndividualPokemon(new SpeciesPokemon(rivalPokemon.getSpecie(), rivalPokemon.getType(), rivalPokemon.getId(), rivalPokemon.getLevel(), rivalPokemon.getMaxHP(), rivalPokemon.getCurrentHP(), rivalPokemon.getAttack(), rivalPokemon.getSpecialAttack(), rivalPokemon.getDefense(), rivalPokemon.getSpecialDefense(), rivalPokemon.getSpeed())); // Al POKéMON añadido le ponemos los atributos con los que se ha quedado tras la captura del POKéMON
+                                myPokemons[pos - 1].setDate(DateTime.Now); // y le establecemos la fecha en la que le añadimos a nuestro equipo
+                                myPokemons[pos - 1].setEo(trainer.getId());
+                            }
+                        }
+                        break;
+                    case 2:
+                       
+                        break;
+                }
+            } while (place > 0 && place < 2);
+
+
+
+
+
+            for (int box = 0; box < boxesPokemon.Length; ++box)
+            {
+                bool exitcheck = false;
+                int counterPosTeamNN = 0;
+                functions.SlowType("\n ¿De qué caja quieres sacar un POkéMON?: ", timeSleep);
+                int numBox = functions.IntToString();
+                for (int posBox = 0; posBox < boxesPokemon[box].Length; ++posBox)
+                {
+                    functions.SlowType("\n ¿De qué posición?: ", timeSleep);
+                    int numPosBox = functions.IntToString();
+                    if (boxesPokemon[numBox - 1][numPosBox - 1] != null)
+                    {
+                        IndividualPokemon pokemonBox = boxesPokemon[numBox - 1][numPosBox - 1];
+                        functions.SlowType("\n Vas a introducir en tu equipo a " + pokemonBox.GetSpecie() + "\n", timeSleep);
+                        functions.SlowType("\n Estos son los POKéMONs de tu equipo: ", timeSleep);
+                        for (int posTeam = 0; posTeam < myPokemons.Length; ++posTeam)
+                        {
+                            if (myPokemons[posTeam] != null)
+                            {
+                                ++counterPosTeamNN;
+                                functions.SlowType("\n     POKéMON " + (posTeam + 1) +
+                                    "\t Especie: " + myPokemons[posTeam].GetSpecie() +
+                                    "\n ", timeSleep);
+                                if (counterPosTeamNN == myPokemons.Length)
+                                {
+                                    functions.SlowType("\n ¿Por qué POKéMON del equipo lo quieres cambiar?: ", timeSleep);
+                                    int numPosTeam = functions.IntToString();
+                                    IndividualPokemon pokemonTeam = myPokemons[numPosTeam - 1];
+                                    myPokemons[numPosTeam - 1] = pokemonBox;
+                                    boxesPokemon[numBox - 1][numPosBox - 1] = pokemonTeam;
+                                    exitcheck = true;
+                                    break;
+                                }
+                            }
+                        }
+                        if(exitcheck == true)
+                        {
+                            return;
+                        }
+                    }
+                    else
+                    {
+                        functions.SlowType("\n Esta posición está vacía. Introduciremos el POKéMON que elijas de tu equipo en esta posición.", timeSleep);
+                        IndividualPokemon pokemonBox = boxesPokemon[numBox - 1][numPosBox - 1];
+                        functions.SlowType("\n Estos son los POKéMONs de tu equipo: ", timeSleep);
+                        for (int posTeam = 0; posTeam < myPokemons.Length; ++posTeam)
+                        {
+                            if (myPokemons[posTeam] != null)
+                            {
+                                ++counterPosTeamNN;
+                                functions.SlowType("\n     POKéMON " + (posTeam + 1) +
+                                    "\t Especie: " + myPokemons[posTeam].GetSpecie() +
+                                    "\n ", timeSleep);
+                                if (counterPosTeamNN == myPokemons.Length)
+                                {
+                                    functions.SlowType("\n ¿Qué POKéMON quieres introducir?: ", timeSleep);
+                                    int numPosTeam = functions.IntToString();
+                                    IndividualPokemon pokemonTeam = myPokemons[numPosTeam - 1];
+                                    myPokemons[numPosTeam - 1] = pokemonBox;
+                                    boxesPokemon[numBox - 1][numPosBox - 1] = pokemonTeam;
+                                    return;
+                                }
+                            }
+                        }
+                    }
+                }
+            }    
