@@ -1,0 +1,119 @@
+@media (min-width: 320px) and (max-width: 800px) {
+    body{
+        background-color: rgb(179, 179, 179);
+    }
+
+
+
+    header ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    .mainContent img{
+        display: none;
+    }
+
+    nav{
+        background-color: greenyellow;
+    }
+
+    .content{
+        padding: 3%;
+        background-color: yellow;
+    }
+
+    .extras{
+        background-color: grey;
+        padding: 2%;
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+@media (min-width: 800px) and (max-width:1027px) {
+    body{
+        background-color: rgb(179, 179, 179);
+        display: flex;
+    }
+
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+
+    header ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    .mainContent{
+        display: flex;
+    }
+
+    nav{
+        background-color: greenyellow;
+        width: 200px;
+    }
+
+    .content{
+        margin-top: 10%;
+        margin-left: 10%;
+        padding: 3%;
+        background-color: yellow;
+    }
+
+    .extras{
+        background-color: grey;
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+@media (min-width: 1028px){
+    body{
+        background-color: rgb(179, 179, 179);
+        display: flex;
+    }
+
+    .main{
+        display: flex;
+    }
+
+    main{
+        display: flex;
+        flex-direction: row;
+    }
+
+    header ul{
+        list-style: none;
+        padding: 0;
+    }
+
+    .mainContent{
+        display: flex;
+    }
+
+    nav{
+        background-color: greenyellow;
+        height: fit-content;
+        width: 200px
+    }
+
+    .content{
+        margin-top: 10%;
+        margin-left: 10%;
+        width: 80%;
+        padding: 3%;
+        background-color: yellow;
+    }
+
+    .extras{
+        background-color: grey;
+        margin-top: 20%;
+        width: fit-content;
+        height: fit-content;
+    }
+}
+
+
