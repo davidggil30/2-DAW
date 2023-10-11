@@ -1,20 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mayor de 3 números</title>
+    <script type="text/javascript">
+        // Diseñar una página HTML /XHTML que contenga 4 cajas de texto de formulario y un botón.
+        // Tres de las cajas son para introducir 3 números. Al pulsar el botón se debe mostrar en la 4ª caja el mayor de los 3 números.
+
+        function encontrarMayor() {
+            var num1 = parseFloat(document.getElementById("numven1").value);
+            var num2 = parseFloat(document.getElementById("numven2").value);
+            var num3 = parseFloat(document.getElementById("numven3").value);
+
+            var mayor = Math.max(num1, num2, num3);
+
+            document.getElementById("mayor").value = mayor;
+        }
+    </script>
 </head>
 <body>
-    <form method="POST">
-        <input type="text" name="numven1" id="numven1">
-        <input type="text" name="numven2" id="numven2">
-        <input type="text" name="numven3" id="numven3">
-        <input type="button" value="Confirmar">
-        <input type="text" name="mayor" id="mayor">
-    </form>
-    <script type="text/javascript">
-        
-    </script>
+    <h1>Encuentra el Mayor de 3 Números</h1>
+    <label for="numven1">Número 1:</label>
+    <input type="text" id="numven1" name="numven1" /><br />
+
+    <label for="numven2">Número 2:</label>
+    <input type="text" id="numven2" name="numven2" /><br />
+
+    <label for="numven3">Número 3:</label>
+    <input type="text" id="numven3" name="numven3" /><br />
+
+    <input type="button" id="boton" value="Encontrar Mayor" onclick="encontrarMayor()" /><br />
+
+    <label for="mayor">Mayor de los 3 números:</label>
+    <input type="text" id="mayor" name="mayor" readonly /><br />
 </body>
 </html>

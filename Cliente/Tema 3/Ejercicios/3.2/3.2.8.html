@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var image_array = new Array();
+        image_array[0] = "img/digital0.gif";
+        image_array[1] = "img/digital1.gif";
+        image_array[2] = "img/digital2.gif";
+        image_array[3] = "img/digital3.gif";
+        image_array[4] = "img/digital4.gif";
+        image_array[5] = "img/digital5.gif";
+        image_array[6] = "img/digital6.gif";
+        image_array[7] = "img/digital7.gif";
+        image_array[8] = "img/digital8.gif";
+        image_array[9] = "img/digital9.gif";
+
+        var intervalId = setInterval("update_clock()", 1000);
+        function update_clock(){
+            // Recopilar la hora actual
+            var current_time = new Date();
+            
+            // Calcular y mostrar los dígitos correspondientes a la hora
+            var current_hour = current_time.getHours();
+            var hour_left = Math.floor(current_hour/10);
+            // math.floor devuelve el próximo entero
+            var hour_rigth = current_hour % 10;
+            document.images["hour1"].src = image_array[hour_left];
+            document.images["hour2"].src = image_array[hour_rigth];
+
+            // Calcular y mostrar los dígitos correspondientes a los minutos
+            var current_minute = current_time.getMinutes();
+            var minute_left = Math.floor(current_minute/10);
+            var minute_right = current_minute % 10;
+            document.images["minute1"].src = image_array[minute_left];
+            document.images["minute2"].src = image_array[minute_right];
+
+            // Calcular y mostrar los dígitos correspondientes a los segundos
+            var current_second = current_time.getSeconds();
+            var second_left = Math.floor(current_second/10);
+            var second_right = current_second % 10;
+            document.images["second1"].src = image_array[second_left];
+            document.images["second2"].src = image_array[second_right];
+        }
+    </script>
+</head>
+<body>
+    <img src="img/digital0.gif" name="hour1">
+    <img src="img/digital0.gif" name="hour2">
+    <img src="img/digitalcolon.gif">
+    <img src="img/digital0.gif" name="minute1">
+    <img src="img/digital0.gif" name="minute2">
+    <img src="img/digitalcolon.gif">
+    <img src="img/digital0.gif" name="second1">
+    <img src="img/digital0.gif" name="second2">
+    <p><a href="javacript:clearTimeout(interval_id)"></a>Detener el reloj</p>
+</body>
+</html>

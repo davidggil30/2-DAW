@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fecha y Día de la Semana</title>
+    <script type="text/javascript">
+        function mostrarFechaYDiaSemana() {
+            var fechaActual = new Date();
+
+            var año = fechaActual.getFullYear();
+            var mes = fechaActual.getMonth() + 1;
+            var dia = fechaActual.getDate();
+            var diaSemana = fechaActual.getDay();
+
+            document.getElementById("resultado").innerHTML = "Año: " + año + "<br>Mes: " + mes + "<br>Día: " + dia;
+        }
+    </script>
+</head>
+<body>
+    <h1>Fecha y Día de la Semana</h1>
+    <button onclick="mostrarFechaYDiaSemana()">Mostrar fecha</button>
+    <div id="resultado"></div>
+</body>
+</html>
