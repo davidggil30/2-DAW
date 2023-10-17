@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 if (isset($_POST["name"])) {
     $sname = $_POST["name"];
@@ -16,14 +15,14 @@ if (isset($_POST["birthdate"])) {
 if (isset($_POST["mail"])) {
     $mail = $_POST["mail"];
 }
+if (isset($_POST["password"])) {
+    $spass = $_POST["password"];
+}
+if (isset($_POST["user"])) {
+    $luser = $_POST["user"];
+}
 if (isset($_POST["pass"])) {
-    $spass = $_POST["pass"];
-}
-if (isset($_POST["luser"])) {
-    $luser = $_POST["luser"];
-}
-if (isset($_POST["lpass"])) {
-    $lpass = $_POST["lpass"];
+    $lpass = $_POST["pass"];
 }
 
 if (isset($sname)) {
@@ -46,7 +45,8 @@ if (isset($sname)) {
         // Registrar el nuevo usuario
         $file = fopen("../csv/usuario.csv", "a") or die("Error");
         fwrite($file, "$sname,$surname,$username,$birthdate,$mail,$spass\n");
-        fclose($file);
+        session_start();
+        $_SESSION["username"] = $Susername;
         header('Location: ./chat.php');
     }
 } elseif (isset($luser) && isset($lpass)) {
@@ -62,13 +62,16 @@ if (isset($sname)) {
             $passwordFromFile = $data[5];
             if ($usernameFromFile == $luser && $passwordFromFile == $lpass) {
                 $userFound = true;
+                session_start();
+                $_SESSION["username"] = $luser;
+                header("Location: ./chat.php");
                 break;
             }
         }
         fclose($file);
 
         if ($userFound) {
-            header('Location: chat.php');
+            header('Location: ./chat.php');
         } else {
             echo "<p>Usuario o contraseña incorrectos</p>";
         }

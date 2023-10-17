@@ -18,7 +18,7 @@
         <label for="mail">Email</label>
         <input type="email" name="mail" id="mail" placeholder="Mail">
         <label for="pass">Contraseña</label>
-        <input type="password" name="pass" id="pass" required placeholder="Contraseña">
+        <input type="password" name="password" id="password" required placeholder="Contraseña">
         <input type="submit" value="Registrarse">
     </form>
 </body>

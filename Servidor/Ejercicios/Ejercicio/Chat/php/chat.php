@@ -1,8 +1,10 @@
 <?php
 session_start();
 
+$usuario = $_SESSION["username"];
+
 // Verificar si el usuario no está autenticado
-if (!isset($_SESSION['username'])) {
+if (!isset($usuario)) {
     header("Location: login.php");
     exit;
 }
@@ -18,7 +20,7 @@ if (!file_exists("../csv/comentarios.csv")) {
 
 // Procesar el envío de mensajes
 if (isset($_POST['message']) && !empty($_POST['message'])) {
-    $message = [$_SESSION['username'], $_POST['message']];
+    $message = [$usuario, $_POST['message']];
     
     // Agregar el nuevo mensaje al archivo CSV
     $csvData = implode(",", $message) . PHP_EOL;
@@ -39,8 +41,8 @@ $chatMessages = array_map('str_getcsv', file("../csv/comentarios.csv"));
     <div style="border: 1px solid ; height: 300px; overflow: auto;">
         <?php
         // Mostrar los mensajes del chat
-        foreach ($chatMessages as $message) {
-            echo "<p>{$message[0]}: {$message[1]}</p>";
+        for ($i = 0; $i < count($chatMessages); $i++) {
+            echo "<p>{$chatMessages[$i][0]}: {$chatMessages[$i][1]}</p>";
         }
         ?>
     </div>
