@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        // Crear un código que cuente el nº de palabras que contiene una frase:
+
+        function numLetters(){
+            var sentence = prompt("Introduce una frase: ");
+            var words = sentence.split(" ");
+            var numWord = words.length;
+            document.write("La frase tiene " + numWord + " palabras.")
+        }
+        numLetters();
+    </script>
+</body>
+</html>

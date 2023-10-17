@@ -1,5 +1,6 @@
 <?php
 
+session_start();
 if (isset($_POST["name"])) {
     $sname = $_POST["name"];
 }
@@ -25,6 +26,10 @@ if (isset($_POST["pass"])) {
     $lpass = $_POST["pass"];
 }
 
+if($_SESSION['username'] = ''){
+    header('Location: ./login.php');
+}
+
 if (isset($sname)) {
     $file = fopen("../csv/usuario.csv", "r") or die("Error");
 
@@ -40,7 +45,8 @@ if (isset($sname)) {
     fclose($file);
 
     if ($userExists) {
-        echo "<p>Este nombre de usuario ya existe</p>";
+        $_SESSION['ErrorSession']="Este usuario ya existe";
+        header('Location: signup.php');
     } else {
         // Registrar el nuevo usuario
         $file = fopen("../csv/usuario.csv", "a") or die("Error");
@@ -52,7 +58,8 @@ if (isset($sname)) {
 } elseif (isset($luser) && isset($lpass)) {
     $file = fopen("../csv/usuario.csv", "r") or die("Error");
     if (filesize("../csv/usuario.csv") == 0) {
-        echo "<p>No hay ningún usuario registrado todavía</p>";
+        $_SESSION['ErrorLogin']="No hay ningún usuario registrado todavía";
+            header('Location: signup.php');
     } else {
         $userFound = false;
 
@@ -73,7 +80,8 @@ if (isset($sname)) {
         if ($userFound) {
             header('Location: ./chat.php');
         } else {
-            echo "<p>Usuario o contraseña incorrectos</p>";
+            $_SESSION['ErrorLogin']="Usuario o contraseña incorrectos";
+            header('Location: login.php');
         }
     }
 } else {

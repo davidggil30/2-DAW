@@ -35,10 +35,11 @@ $chatMessages = array_map('str_getcsv', file("../csv/comentarios.csv"));
 <html>
 <head>
     <title>Chat</title>
+    <link rel="stylesheet" href="../style/chat.css">
 </head>
 <body>
     <h1>Bienvenido al chat, <?php echo $_SESSION['username']; ?></h1>
-    <div style="border: 1px solid ; height: 300px; overflow: auto;">
+    <div class="container   ">
         <?php
         // Mostrar los mensajes del chat
         for ($i = 0; $i < count($chatMessages); $i++) {

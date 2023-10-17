@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Desarrollar la funcion LetraNIF(NumeroNIF) Función que devuelva  la letra del NIF:
+        // La letra del Nif se calcula hallando el resto de la división del Numero del Nif entre 23 y 
+            // sumando 1 al resultado. El valor obtenido coincide con la posición de la letra en la siguiente cadena de izquierda a derecha:
+
+        function letraNif() {
+            var letrasDNI = {
+                0: 'T', 1: 'R', 2: 'W', 3: 'A', 4: 'G',
+                5: 'M', 6: 'Y', 7: 'F', 8: 'P', 9: 'D',
+                10: 'X', 11: 'B', 12: 'N', 13: 'J',
+                14: 'Z', 15: 'S', 16: 'Q', 17: 'V',
+                18: 'H', 19: 'L', 20: 'C', 21: 'K', 22: 'E'
+            };
+
+            var nums = prompt("Introduce los números de tu DNI: ");
+            var resto = nums % 23;
+
+            if (letrasDNI.hasOwnProperty(resto)) {
+                var letra = letrasDNI[resto];
+                document.write('Tu DNI es ' + nums + letra);
+            } else {
+                document.write('El número DNI introducido no es válido');
+            }
+        }
+
+        letraNif(); // Llamamos a la función para ejecutarla
+    </script>
+</body>
+</html>
