@@ -21,10 +21,15 @@ if (!file_exists("../csv/comentarios.csv")) {
 // Procesar el envío de mensajes
 if (isset($_POST['message']) && !empty($_POST['message'])) {
     $message = [$usuario, $_POST['message']];
-    
+    if(stripos($_POST['message'], '<script>') !== false){
+        header('Location: chat.php');
+        exit;
+    }
     // Agregar el nuevo mensaje al archivo CSV
     $csvData = implode(",", $message) . PHP_EOL;
     file_put_contents("../csv/comentarios.csv", $csvData, FILE_APPEND);
+
+
 }
 
 // Leer los mensajes del archivo CSV

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+        // 6.- Crear la función:
+
+        // Trim(Cadena)	
+        // Que devuelva una cadena quitando  los posibles blancos por la izquierda y derecha que pudiese tener cadena original.
+
+        var sentence = prompt("Introduce una cadena de texto:");
+        function trim(sentence) {
+            let i = 0;
+            let j = cadena.length;
+
+            // Eliminar espacios en blanco al principio
+            while (sentence.charAt(inicio) === ' ' && i < j) {
+                i++;
+            }
+
+            // Eliminar espacios en blanco al final
+            while (sentence.charAt(fin - 1) === ' ' && j > i) {
+                j--;
+            }
+
+            sentence = sentence.slice(i, j);
+        }
+        document.write("La cadena original quedaría: " + sentence);
+    </script>
+</body>
+
+</html>
