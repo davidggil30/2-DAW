@@ -7,34 +7,31 @@
 </head>
 <body>
     <script type="text/javascript">
-
-        // Crear las funciones típicas de cualquier lenguaje:
-
-            // Right(“cadena”, total)		Extrae caracteres por la derecha.
-            // Left(“cadena”, total)		Extrae caracteres por la izquierda.
-            // Mid(“cadena”,inicio, total) 	Extrae un nº de  caracteres desde una posición dada.
-
-        // Estas funciones deben devolver un string con la subcadena obtenida.
         var sentence = prompt("Introduce una cadena: ");
         var exR = parseInt(prompt("¿Cuántos caracteres quieres quitar por la derecha?"));
         var exL = parseInt(prompt("¿Cuántos caracteres quieres quitar por la izquierda?"));
         var exPos = parseInt(prompt("¿Cuántos caracteres quieres quitar?"));
-        var pos = parseInt(prompt("¿Desde que posición?"));
-
-        function Rigth(sentence, exR){
+        var pos = parseInt(prompt("¿Desde qué posición?"));
+    
+        function Right(sentence, exR) {
             sentence = sentence.slice(-exR);
-            document.write(sentence);
+            document.write("Right: " + sentence + "<br>");
         }
-        Rigth(sentence,exR);
-        function Left(sentence, exL){
+    
+        function Left(sentence, exL) {
             sentence = sentence.slice(0, exL);
-            document.write(sentence);
+            document.write("Left: " + sentence + "<br>");
         }
-        Left(sentence,exL);
-        function Mid(sentence, exPos, pos){
-            
+    
+        function Mid(sentence, exPos, pos) {
+            sentence = sentence.slice(pos, pos + exPos);
+            document.write("Mid: " + sentence);
         }
-
+    
+        Right(sentence, exR);
+        Left(sentence, exL);
+        Mid(sentence, exPos, pos);
     </script>
+    
 </body>
 </html>

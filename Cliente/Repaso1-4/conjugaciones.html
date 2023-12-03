@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conjugador de Verbos</title>
+    <script>
+        function conjugateVerb() {
+            // Obtener el valor del input y convertir a minúsculas
+            var verb = document.getElementById("verbInput").value.toLowerCase();
+
+            // Verificar si los dos últimos caracteres son "ar"
+            if (verb.endsWith("ar")) {
+                // Extraer el prefijo del verbo
+                var prefix = verb.substring(0, verb.length - 2);
+
+                // Definir las terminaciones para cada tiempo verbal
+                var pronombres = ["yo", "tú", "él/ella", "nosotros", "vosotros", "ellos/ellas"];
+                var presenteTerminaciones = ["o", "as", "a", "amos", "áis", "an"];
+                var preteritoTerminaciones = ["é", "aste", "ó", "amos", "asteis", "aron"];
+                var futuroTerminaciones = ["aré", "arás", "ará", "aremos", "aréis", "arán"];
+
+                // Obtener el tipo de tiempo verbal seleccionado
+                var tiempoVerbal = document.querySelector('input[name="tiempo"]:checked').value;
+
+                // Construir y mostrar la conjugación del verbo
+                var resultado = "";
+                switch (tiempoVerbal) {
+                    case "presente":
+                        resultado = conjugateTiempoVerbal(prefix, pronombres, presenteTerminaciones);
+                        break;
+                    case "preterito":
+                        resultado = conjugateTiempoVerbal(prefix, pronombres, preteritoTerminaciones);
+                        break;
+                    case "futuro":
+                        resultado = conjugateTiempoVerbal(prefix, pronombres, futuroTerminaciones);
+                        break;
+                    default:
+                        alert("Selecciona un tiempo verbal válido");
+                        return;
+                }
+
+                document.getElementById("resultado").textContent = resultado;
+            } else {
+                alert("Error: Debe ingresar un verbo de la 1ª conjugación (terminado en 'ar').");
+                document.getElementById("verbInput").value = "";
+                document.getElementById("resultado").textContent = "";
+            }
+        }
+
+        function conjugateTiempoVerbal(prefix, pronombres, terminaciones) {
+            // Construir la conjugación utilizando las terminaciones
+            var conjugacion = "";
+            for (var i = 0; i < pronombres.length; i++) {
+                conjugacion += pronombres[i] + " " + prefix + terminaciones[i] + "<br>";
+            }
+            return conjugacion;
+        }
+    </script>
+</head>
+<body>
+    <h1>Conjugador de Verbos</h1>
+    <label for="verbInput">Infinitivo del verbo (terminado en 'ar'):</label>
+    <input type="text" id="verbInput">
+    <br>
+    <input type="radio" name="tiempo" value="presente" checked> Presente
+    <input type="radio" name="tiempo" value="preterito"> Pretérito
+    <input type="radio" name="tiempo" value="futuro"> Futuro
+    <br>
+    <button onclick="conjugateVerb()">Conjugar</button>
+    <div id="resultado"></div>
+</body>
+</html>

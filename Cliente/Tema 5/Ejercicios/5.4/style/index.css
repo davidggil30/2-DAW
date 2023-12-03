@@ -1,0 +1,37 @@
+body{
+    color: white;
+}
+
+.parent{
+    background-color: #4682b4;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.parent .left{
+    margin-right: 5%;
+}
+
+.parent fieldset{
+    width: 500px;
+}
+
+.parent legend{
+    border: solid 1px white;
+    background-color: #000080;
+    color: white;
+}
+
+.parent fieldset{
+    display: flex;
+    flex-direction: column;
+}
+
+.parent .birthdate{
+    display: flex;
+    flex-direction: row;
+}
+
+.parent .birthdate input[type="number"]{
+    width: 50px;
+}

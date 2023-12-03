@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <title>EJERCICIOS CON EVENTOS</title>
+    <script src="./js/script.js"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3620844033097790"
+     crossorigin="anonymous"></script>
+</head>
+<body>
+    <form id="formulario" action="index.html" method="POST" onsubmit="javascript: return checkCredential()">
+        <div>
+            <label for="name">Nombre:</label>
+            <input type="text" name="name" id="name">
+        </div>
+        <div>
+            <label for="age">Edad:</label>
+            <input type="number" name="age" id="age">
+        </div>
+        <div>
+            <label for="tel">Teléfono:</label>
+            <input type="tel" name="tel" id="tel">
+        </div>
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email">
+        </div>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Reset">
+    </form>
+</body>
+</html>

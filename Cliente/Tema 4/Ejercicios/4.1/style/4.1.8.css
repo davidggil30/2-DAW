@@ -1,0 +1,57 @@
+/* Estilo general del formulario */
+body {
+    background-color: #262626;
+    font-family: 'Arial', sans-serif;
+}
+
+form {
+    width: 40%;
+    margin: auto;
+    padding: 20px;
+    border: 3px solid #ffcc00;
+    border-radius: 10px;
+    background-color: #ff9900;
+    text-align: center;
+}
+
+/* Estilo de las etiquetas */
+label {
+    font-weight: bold;
+    display: block;
+    color: #333;
+    font-size: 16px;
+}
+
+/* Estilo de los campos de entrada */
+input[type="number"] {
+    width: 70%;
+    padding: 5px;
+    margin: 10px 0;
+    border: 2px solid #ffcc00;
+    border-radius: 5px;
+    font-size: 16px;
+    box-shadow: 1px 1px 5px grey;
+}
+
+/* Estilo del botón de cálculo y el botón de reset */
+input[type="button"], input[type="reset"] {
+    background-color: #ff3300;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 15px 30px;
+    margin: 20px 10px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 1px 1px 5px grey;
+}
+
+input[type="button"]:hover, input[type="reset"]:hover {
+    background-color: #cc0000;
+}
+
+/* Estilo de los campos de entrada deshabilitados */
+input[disabled] {
+    background-color: #ccc;
+    color: #666;
+}

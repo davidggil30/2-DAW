@@ -1,0 +1,17 @@
+body{
+    background-color: #F4F5DB;
+    font-family: Verdana;
+}
+
+legend{
+    font-weight: bold;
+}
+
+#sexo{
+    float: right;
+    margin-top: -10%;
+}
+
+#errores{
+    color:red;
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <title>ADIFO</title>
+</head>
+
+<body>
+    <header>
+        <img src="./paraalumnossupuestoDIWpráctico/logo.jpg" alt="logo" class="logo">
+        <h1> El OVNI ADIFO TM</h1>
+        <p>Unos ingenieros y no aliens han creado un platillo volante que vuela y es completamente funcional</p>
+    </header>
+    <main>
+        <nav>
+            <ul>
+                <li>Inicio</li>
+                <li>Conoce ADIFO</li>
+                <li>Contacta con nosotros</li>
+            </ul>
+        </nav>
+        <div>
+            <div>
+                <h2><a href="#">Qué sabemos del OVNI</a></h2>
+            </div>
+            <div>
+                <p>Si se ve de lejos parece un OVNI pero en verdad es un objeto volador si identificado</p>
+            </div>
+        </div>
+        <div class="descripcion">
+            <div>
+                <h1 class="title">ADIFO</h1>
+            </div>
+            <div>
+                <p>Lorem ipsum dolor sit amet consectetur <span><a href="#">adipisicing</a></span> elit. Praesentium
+                    laborum cum deserunt mollitia, perspiciatis impedit ut nesciunt quaerat ipsa, recusandae ullam
+                    voluptas, ratione quo aut. Hic maxime eaque omnis repellendus!</p>
+            </div>
+        </div>
+        <div class="presentacion">
+            <div>
+                <h2>Presentacion de ADIFO</h2>
+            </div>
+            <div class="video">
+                <video id="video" controls poster="./paraalumnossupuestoDIWpráctico/poster.JPG">
+                    <source src="./paraalumnossupuestoDIWpráctico/adifo.mp4" type="video/mp4">
+                </video>            
+            </div>
+        </div>
+        <div class="formulario">
+            <div>
+                <h2>Este es un formulario de amigo de ADIFO</h2>
+            </div>
+            <div>
+                <form action="index.html" method="POST">
+                    <div>
+                        <label for="alias">Alias required</label>
+                        <input type="text" name="alias" id="alias" required>
+                    </div>
+                    <div>
+                        <label for="trat">Tratamineto</label>
+                        <select name="trat" id="trat">
+                            <option value="señor">Sr.</option>
+                            <option value="señora">Sñr.</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label for="edad">Edad</label>
+                        <input type="number" name="edad" id="edad" min="18" max="100">
+                    </div>
+                    <div>
+                        <label for="email">Email required</label>
+                        <input type="email" name="email" id="email" required>
+                    </div>
+                    <div>
+                        <label for="web">Pagina web</label>
+                        <input type="text" name="web" id="web">
+                    </div>
+                    <div>
+                        <label for="dateNac">Fecha de nacimiento</label>
+                        <input type="date" name="dateNac" id="dateNac">
+                    </div>
+                    <div>
+                        <label for="nivel">Nivel de entusiasmo</label>
+                        <input type="range" name="nivel" id="nivel">
+                    </div>
+                    <input type="submit" value="Enviar" onclick="guardarNombre()">
+                </form>
+            </div>
+        </div>
+        <div class="canvas">
+            <div>
+                <h2>Canvas fundador de META</h2>
+            </div>
+            <div class="draw">
+                <canvas id="canvas" width="500" height="500"></canvas>
+                <p>Utilizar un navegador compatible con Canvas</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Hola</p>
+    </footer>
+    <script src="./js/index.js"></script>
+    <script>
+        function guardarNombre() {
+
+            var aliasValue = document.getElementById('alias').value;
+            sessionStorage.setItem("nombre", aliasValue);
+            console.log("Nombre guardado en sessionStorage: " + aliasValue);
+        }
+    </script>
+</body>
+
+</html>

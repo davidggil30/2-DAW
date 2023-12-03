@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio Canvas</title>
+    
+</head>
+<body>
+    <canvas id="canvas" width="500" height="500"></canvas>
+    <script>
+        var c = document.getElementById("canvas");
+        var ctx = c.getContext("2d");
+
+        // Fondo morado
+        ctx.fillStyle = "purple"; 
+        ctx.fillRect(0, 0, c.width, c.height);
+
+        // Cuadrícula blanca
+        ctx.strokeStyle = "white"; // Establece el color de trazo en blanco
+
+        // Plantilla
+        for (var x = 0.5; x < 500; x += 10) {
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, 500);
+            ctx.stroke();
+        }
+        for (var y = 0.5; y < 500; y += 10) {
+            ctx.moveTo(0, y);
+            ctx.lineTo(500, y);
+            ctx.stroke();
+        }
+        
+        // Dibuja el cuadrado verde
+        ctx.fillStyle = "green"; 
+        ctx.fillRect(0, 0, 150, 150);
+        
+        // Configura la sombra
+        ctx.shadowOffsetX = 10;  // Desplazamiento horizontal de la sombra
+        ctx.shadowOffsetY = 10;  // Desplazamiento vertical de la sombra
+        ctx.shadowBlur = 2;    // Desenfoque de la sombra
+        ctx.shadowColor = "rgba(0, 0, 0, 0.5)";  // Color y opacidad de la sombra
+
+        // Dibuja el cuadrado azul sin relleno
+        ctx.strokeStyle = "blue";
+        ctx.strokeRect(100, 100, 20, 20);
+
+        // Dibuja el cuadrado rojo
+        ctx.fillStyle = "red"; 
+        rotationAngle = 50;
+        ctx.fillRect(100,150, 10, 10);
+
+        // Dibuja un círculo            
+        ctx.fillStyle = "blue";  // Establece el color de relleno en rojo
+        ctx.beginPath();  // Inicia el camino
+        ctx.arc(150, 350, 75, 0, 2*Math.PI);  // Dibuja el círculo
+        ctx.fill();  // Rellena el círculo
+
+        // Agregar texto
+        ctx.font = "italic 35px Arial ";  // Establece la fuente y el tamaño del texto
+        ctx.fillStyle = "black";  // Establece el color del texto
+        ctx.fillText("Hola, mundo!", 50, 50);  // Agrega el texto al lienzo
+
+        // Crear un gradiente lineal
+        var gradient = ctx.createLinearGradient(0, 0, 0, 350);
+        gradient.addColorStop(0, "red");  // Color en el inicio
+        gradient.addColorStop(1, "green");  // Color en el final
+        // Dibuja un cuadrado con color degradado
+        ctx.fillStyle = gradient;  // Establece el gradiente como color de relleno
+        ctx.fillRect(250, 100, 100, 200);  // Dibuja el cuadrado
+
+        // Dibuja una línea curva cuadrática
+        ctx.beginPath();
+        ctx.moveTo(60, 400);  // Punto de inicio
+        ctx.quadraticCurveTo(300, 340, 270, 200);  // Dibuja la curva
+        ctx.strokeStyle = "black";  // Establece el color de trazo
+        ctx.lineWidth = 6;  // Establece el ancho de línea
+        ctx.stroke();  // Dibuja la línea curva
+
+        // Dibuja varios cuadrados seguidos
+        ctx.fillStyle = "blue";
+        for (var i = 0; i < 7; i++) {
+            ctx.fillRect(400, 50, 75,75); 
+            ctx.translate(50, 50);
+            ctx.rotate(Math.PI/16);
+            ctx.scale(0.7, 0.7);
+        }
+
+
+</script>
+</body>
+</html>

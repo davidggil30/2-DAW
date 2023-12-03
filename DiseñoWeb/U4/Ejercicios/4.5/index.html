@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editor de Contenidos</title>
+</head>
+<body>
+  <textarea id="editor" rows="10" cols="30"></textarea>
+
+  <script>
+    // Utilizar SessionStorage para almacenar el contenido de la caja de texto
+    var editor = document.getElementById('editor');
+    editor.addEventListener('input', function () {
+      // Guardar el contenido en SessionStorage en cada pulsación de tecla
+      sessionStorage.setItem('editorContent', editor.value);
+    });
+
+    // Mostrar el último contenido almacenado al cargar la página
+    var storedContent = sessionStorage.getItem('editorContent');
+    if (storedContent) {
+      editor.value = storedContent;
+    }
+
+    // Utilizar LocalStorage para almacenar el contenido de la caja de texto
+    editor.addEventListener('input', function () {
+      // Guardar el contenido en LocalStorage en cada pulsación de tecla
+      localStorage.setItem('editorContent', editor.value);
+
+      // Actualizar el contenido en otras ventanas abiertas
+      broadcastUpdate(editor.value);
+    });
+
+    // Mostrar el último contenido almacenado al cargar la página
+    var storedContentLocalStorage = localStorage.getItem('editorContent');
+    if (storedContentLocalStorage) {
+      editor.value = storedContentLocalStorage;
+    }
+
+    // Función para actualizar el contenido en otras ventanas abiertas
+    function broadcastUpdate(content) {
+      // Enviar un mensaje a otras ventanas abiertas
+      localStorage.setItem('editorUpdate', JSON.stringify({ content }));
+    }
+
+    // Escuchar eventos de almacenamiento en otras ventanas
+    window.addEventListener('storage', function (event) {
+      // Verificar si el evento es una actualización del contenido
+      if (event.key === 'editorUpdate') {
+        var data = JSON.parse(event.newValue);
+        if (data && data.content) {
+          // Actualizar el contenido en la caja de texto
+          editor.value = data.content;
+        }
+      }
+    });
+  </script>
+</body>
+</html>

@@ -10,9 +10,6 @@ if (isset($_POST["surname"])) {
 if (isset($_POST["username"])) {
     $username = $_POST["username"];
 }
-if (isset($_POST["birthdate"])) {
-    $birthdate = $_POST["birthdate"];
-}
 if (isset($_POST["mail"])) {
     $mail = $_POST["mail"];
 }

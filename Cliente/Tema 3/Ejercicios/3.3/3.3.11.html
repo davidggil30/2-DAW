@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script type="text/javascript">
+        var img = new Array("./img/google.png", "./img/facebook.png");
+        var current = 0;
+        function changeImg(){
+            document.visor.src = img[++current % img.length];
+        }
+            
+    </script>
+</head>
+<body>
+    <image src="./img/google.png" name="visor" height="150" width="165"></image>
+    <input type="button" value="Cambia la imagen" onclick="changeImg()">
+</body>
+</html>

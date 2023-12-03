@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <style>
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+
+        }
+
+        div {
+            width: 90%;
+            margin-left: 8%;
+
+        }
+
+        #div1 {
+            width: auto;
+            height: 220px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+         #div2 {
+            width: auto;
+            height: 220px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        h2 {
+            text-align: center;
+        }
+        p{
+            text-align: center;
+        }
+
+    </style>
+
+    <script>
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+       
+        function drop(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+        }
+
+        var contador = 0;
+
+        function silla(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+            var precio = 50;
+            contador = contador + precio;
+            precioTotal.value = contador;
+            div2.style.borderColor = "green";
+        }
+        function mesa(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+            var precio = 150;
+            contador = contador + precio;
+            precioTotal.value = contador;
+            div2.style.borderColor = "green";
+        }
+        function sofa(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+            var precio = 650;
+            contador = contador + precio;
+            precioTotal.value = contador;
+            div2.style.borderColor = "green";
+        }
+        function armario(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+            var precio = 330;
+            contador = contador + precio;
+            precioTotal.value = contador;
+            div2.style.borderColor = "green";
+        }
+
+    </script>
+</head>
+
+<body>
+    <div align="center">
+        <h2>Elige un objeto para comprar</h2><br />
+        <div class="flex" align="center" id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <img width="200px" height="200px" src="img/armario.jpg" id="armario" draggable="true" ondragstart="armario(event)">
+            <img width="200px" height="200px" src="img/silla.jpg" id="silla" draggable="true" ondragstart="silla(event)">
+            <img width="200px" height="200px" src="img/mesa.jpg" id="mesa" draggable="true" ondragstart="mesa(event)">
+            <img width="200px" height="200px" src="img/sofa.jpg" id="sofa" draggable="true" ondragstart="sofa(event)">
+        </div>
+    </div>
+
+    <h2>Cesta de la compra</h2>
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+    <p><b>Total a pagar:</b><input type="text" id="precioTotal" size='6'>€</p>
+
+</body>
+
+</html>

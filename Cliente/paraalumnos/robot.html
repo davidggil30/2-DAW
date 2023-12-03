@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Robots</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        .men {
+            color: green;
+        }
+
+        .methods {
+            color: blue;
+        }
+    </style>
+    <script>
+        function Robot(nombre, tipo, estado) {
+            this.nombre = nombre;
+            this.tipo = tipo;
+            this.estado = estado;
+            
+            this.espera = function () {
+                document.write(`${this.nombre}: ¡Iniciando modo espera! … ¡En modo espera!`);
+                this.estado = 0;
+            };
+
+            this.activar = function () {
+                document.write(`${this.nombre}: ¡Saliendo modo espera … Activado!`);
+                this.estado = 1;
+            };
+
+            this.ayuda = function () {
+                var mensaje;
+
+                if (this.estado == 1) {
+                    mensaje = "¡Vengo inmediatamente!";
+                } else {
+                    mensaje = "Piiip";
+                }
+
+                document.write(`${this.nombre}: ${mensaje}`);
+            };
+
+        }
+
+        var C3PO = new Robot("C3PO", "traductor", 0);
+        var R2D2 = new Robot("R2D2", "arregla-todo", 0);
+    </script>
+</head>
+
+<body>
+    <div>
+        <h3>Probando R2D2</h3>
+        <img src="./paralumnos/r2d2.jpg" alt="r2d2" width="400">
+        <p class="men">Mensafono del robot</p>
+        <div class="methods">
+            <div>
+                <script>R2D2.espera()</script>
+            </div>
+            <div>
+                <script>R2D2.activar()</script>
+            </div>
+            <div>
+                <script>R2D2.espera()</script>
+            </div>
+            <div>
+                <script>R2D2.ayuda()</script>
+            </div>
+        </div>
+    </div>
+    <div>
+        <h3>Probando C3PO</h3>
+        <img src="./paralumnos/c3po.jpg" alt="c3po" width="400">
+        <p class="men">Mensafono del robot</p>
+        <div class="methods">
+            <div>
+                <script>C3PO.espera()</script>
+            </div>
+            <div>
+                <script>C3PO.activar()</script>
+            </div>
+            <div>
+                <script>C3PO.espera()</script>
+            </div>
+            <div>
+                <script>C3PO.ayuda()</script>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

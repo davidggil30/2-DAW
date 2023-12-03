@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="4.1.html" method="post">
+
+        <!-- Los 12 nuevos tipos de elementos input -->
+        <input type="text" name="input1" placeholder="Texto de ejemplo" required><br>
+        <input type="email" name="input2" placeholder="Correo electrónico" required><br>
+        <input type="tel" name="input3" placeholder="Número de teléfono" required><br>
+        <input type="url" name="input4" placeholder="URL" required><br>
+        <input type="date" name="input5" required><br>
+        <input type="time" name="input6" required><br>
+        <input type="color" name="input7" required><br>
+        <input type="range" name="input8" min="0" max="100" step="1" required><br>
+        <input type="month" name="input9" required><br>
+        <input type="week" name="input10" required><br>
+        <input type="search" name="input11" placeholder="Búsqueda" required><br>
+        <input type="hidden" name="input12" value="Valor Oculto"><br>
+
+        <!-- Nuevo elemento datalist -->
+        <label for="provincia">Selecciona una provincia:</label>
+        <input list="provincias" name="provincia">
+        <datalist id="provincias">
+            <option value="Madrid">
+            <option value="Barcelona">
+            <option value="Valencia">
+            <option value="Sevilla">
+        </datalist>
+        <br>
+
+        <!-- Caja de texto -->
+        <label for="cajaTexto">Caja de Texto:</label>
+        <input type="text" id="cajaTexto" name="cajaTexto" autofocus placeholder="Introduce un texto" required
+            autocomplete="on">
+        <br>
+
+        <!-- Caja de número -->
+        <label for="cajaNumero">Caja de Número (entre 0 y 10):</label>
+        <input type="number" id="cajaNumero" name="cajaNumero" min="0" max="10" required>
+        <br>
+
+        <!-- Campo de selección de ficheros -->
+        <label for="archivo">Selecciona un archivo:</label>
+        <input type="file" id="archivo" name="archivo" multiple>
+        <br>
+
+        <!-- Campo de contraseña -->
+        <label for="contrasena">Contraseña (mínimo 8 caracteres, comienza con número y termina en mayúscula):</label>
+        <input type="password" id="contrasena" name="contrasena" pattern="^[0-9].{6,}[A-Z]$" required>
+        <br>
+
+        <!-- Nuevo elemento progress -->
+        <label for="avance">Avance del formulario:</label>
+        <progress id="avance" value="0" max="100"></progress>
+        <br>
+        
+        <br>
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+
+</html>

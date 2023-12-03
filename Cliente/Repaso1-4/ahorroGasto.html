@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Ejercicio HTML y JS</title>
+  <script>
+    // Objeto persona
+    function Persona(numero, nombre, ahorrado) {
+      this.numero = numero;
+      this.nombre = nombre;
+      this.ahorrado = ahorrado;
+    }
+
+    // Array de personas
+    let personas = [];
+
+    // Función para agregar una persona
+    function agregarPersona() {
+      // Obtenemos los datos del formulario
+      const numero = document.getElementById("numero").value;
+      const nombre = document.getElementById("nombre").value;
+      const ahorrado = document.getElementById("ahorrado").value;
+
+      // Creamos una nueva persona con los datos obtenidos
+      const persona = new Persona(parseInt(numero), nombre, parseFloat(ahorrado));
+
+      // Agregamos la persona al array
+      personas.push(persona);
+
+      // Actualizamos la tabla
+      actualizarTabla();
+    }
+
+    // Función para actualizar la tabla
+    function actualizarTabla() {
+      // Limpiamos la tabla
+      document.getElementById("tbody").innerHTML = "";
+
+      // Recorremos el array de personas
+      for (const persona of personas) {
+        // Creamos una fila para cada persona
+        const fila = document.createElement("tr");
+
+        // Agregamos las celdas a la fila
+        fila.appendChild(document.createElement("td")).textContent = persona.numero;
+        fila.appendChild(document.createElement("td")).textContent = persona.nombre;
+        fila.appendChild(document.createElement("td")).textContent = persona.ahorrado;
+
+        // Agregamos la fila a la tabla
+        document.getElementById("tbody").appendChild(fila);
+      }
+    }
+
+    // Función para guardar las personas
+    function guardar() {
+      // Obtenemos el JSON de las personas
+      const json = JSON.stringify(personas);
+
+      // Guardamos el JSON en el almacenamiento local
+      localStorage.setItem("personas", json);
+    }
+
+    // Función que se ejecuta después de cargar el DOM
+    document.addEventListener("DOMContentLoaded", function() {
+      // Eventos
+      document.getElementById("agregar").addEventListener("click", agregarPersona);
+      document.getElementById("guardar").addEventListener("click", guardar);
+
+      // Inicializamos el array de personas
+      if (localStorage.getItem("personas")) {
+        personas = JSON.parse(localStorage.getItem("personas"));
+        actualizarTabla();
+      }
+    });
+  </script>
+</head>
+<body>
+  <h1>Listado de personas</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Número</th>
+        <th>Nombre</th>
+        <th>Ahorrado</th>
+      </tr>
+    </thead>
+    <tbody id="tbody">
+    </tbody>
+  </table>
+  <label for="numero">Número:</label>
+  <input type="text" id="numero">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre">
+  <label for="ahorrado">Ahorrado:</label>
+  <input type="text" id="ahorrado">
+  <button id="agregar">Agregar persona</button>
+  <button id="guardar">Guardar</button>
+</body>
+</html>

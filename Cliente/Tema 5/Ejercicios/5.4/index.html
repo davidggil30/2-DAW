@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/index.css">
+    <script src="./js/index.js"></script>
+    <title>Ej5-4</title>
+</head>
+<body>
+    <form action="./index.html" method="post" onsubmit="javascript: return CheckForm();">
+        <fieldset class="parent">
+            <legend>Datos del Cliente</legend>
+            <div class="left">
+                <fieldset>
+                    <legend id="red_1">Identificación</legend>
+                    <label for="email">Cuenta de correo</label>
+                    <input type="email" name="email" id="email">
+                </fieldset>
+                <fieldset>
+                    <legend id="red_2">Tipo de música que más te gusta</legend>
+                    <div class="campo">
+                        <input type="radio" name="music" id="music" value="rock">
+                        <label for="rock">Música Rock</label>
+                    </div>
+                    <div class="campo">
+                        <input type="radio" name="music" id="music" value="pop">
+                        <label for="pop">Música Pop</label>
+                    </div>
+                    <div class="campo">
+                        <input type="radio" name="music" id="music" value="clasic">
+                        <label for="clasic">Música Clásica</label>
+                    </div>
+                    <div class="campo">
+                        <input type="radio" name="music" id="music" value="salsa">
+                        <label for="salsa">Música Salsa</label>
+                    </div>
+                    <div class="campo">
+                        <input type="radio" name="music" id="music" value="heavy">
+                        <label for="heavy">Música Heavy</label>
+                    </div>
+                    <div class="campo">
+                        <input type="radio" name="music" id="music" value="punk">
+                        <label for="punk">Música punk</label>
+                    </div>
+                    <div class="campo">
+                        <input type="radio" name="music" id="music" value="reggae">
+                        <label for="reggae">Música Reggae</label>
+                    </div>
+                    <div class="campo">
+                        <input type="radio" name="music" id="music" value="rap">
+                        <label for="rap">Música Rap</label>
+                    </div>
+                    <div class="campo">
+                        <input type="radio" name="music" id="music" value="tecno">
+                        <label for="tecno">Música Electrónica</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <legend id="red_3">Hora de regreso a casa</legend>
+                    <div class="campo">
+                        <input type="checkbox" name="arrive_time" id="arrive" value="10">
+                        <label for="arrive_6">10:00</label>
+                    </div>
+                    <div class="campo">
+                        <input type="checkbox" name="arrive_time" id="arrive" value="11">
+                        <label for="arrive_11">11:00</label>
+                    </div>
+                    <div class="campo">
+                        <input type="checkbox" name="arrive_time" id="arrive" value="12">
+                        <label for="arrive_12">12:00</label>
+                    </div>
+                    <div class="campo">
+                        <input type="checkbox" name="arrive_time" id="arrive" value="1">
+                        <label for="arrive_1">01:00</label>
+                    </div>
+                    <div class="campo">
+                        <input type="checkbox" name="arrive_time" id="arrive" value="2">
+                        <label for="arrive_2">02:00</label>
+                    </div>
+                    <div class="campo">
+                        <input type="checkbox" name="arrive_time" id="arrive" value="3">
+                        <label for="arrive_3">03:00</label>
+                    </div>
+                    <div class="campo">
+                        <input type="checkbox" name="arrive_time" id="arrive" value="4">
+                        <label for="arrive_4">04:00</label>
+                    </div>
+                    <div class="campo">
+                        <input type="checkbox" name="arrive_time" id="arrive" value="5">
+                        <label for="arrive_5">05:00</label>
+                    </div>
+                </fieldset>
+                <fieldset>
+                    <input type="submit" value="Enviar datos">
+                    <input type="reset" value="Restablecer datos">
+                </fieldset>
+            </div>
+            
+            <div class="right">
+                <fieldset>
+                    <legend id="red_4">Datos personales</legend>
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name" id="name">
+                </fieldset>
+                <fieldset class="birthdate">
+                    <legend id="red_5">Fecha de nacimiento</legend>
+                    <label for="day">Día</label>
+                    <input type="number" name="day" id="day">
+                    <label for="month">Mes</label>
+                    <input type="number" name="month" id="month">
+                    <label for="year">Año</label>
+                    <input type="number" name="year" id="year">
+                </fieldset>
+                <fieldset>
+                    <legend id="red_6">Día favorito de la semana</legend>
+                    <select name="week_day" id="week_day" size="7">
+                        <option value="monday">Lunes</option>
+                        <option value="tuesday">Martes</option>
+                        <option value="wednesday">Miércoles</option>
+                        <option value="thursday">Jueves</option>
+                        <option value="friday">Viernes</option>
+                        <option value="saturday">Sábado</option>
+                        <option value="sunday">Domingo</option>
+                    </select>
+                </fieldset>
+                <fieldset>
+                    <legend id="red_7">Número de amigos con los que sales</legend>
+                    <label for="friends">Número de amigos</label>
+                    <input type="number" name="friends" id="friends">
+                </fieldset>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>

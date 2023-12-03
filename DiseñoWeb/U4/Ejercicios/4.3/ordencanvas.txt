@@ -1,0 +1,10 @@
+//lineas de fondo
+//cuadrado esquina superior izquierda
+//resctangulo central
+ //circulo
+ //Cuadrados azul claro
+//texto Hola mundo
+ //texto XXX
+ //linea curva
+//cuadrado rojo pequeño
+//cuadrado borde azul pequeño

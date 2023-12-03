@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4</title>
+    <style>
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div {
+            width: 90%;
+            margin-left: 8%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #div1 {
+            width: auto;
+            height: 220px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+            margin-left: 1%;
+            margin-right: 1%;
+        }
+
+        #div2 {
+            width: auto;
+            height: 220px;
+            padding: 10px;
+            border: 1px solid #aaaaaa;
+            margin-left: 1%;
+            margin-right: 1%;
+            justify-content: center;
+            align-items: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p{
+            text-align: center;
+        }
+
+    </style>
+
+    <script>
+        var contador = 0;
+        let products = [
+            {
+                "name": "silla",
+                "price": 50
+            },
+            {
+                "name": "mesa",
+                "price": 150
+            },
+            {
+                "name": "sofa",
+                "price": 650
+            },
+            {
+                "name": "armario",
+                "price": 330
+            }
+        ];
+
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+
+        function add(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            for(let i = 0; i < products.length; i += 1){
+                if (products[i]["name"] == data)
+                {
+                    contador += products[i]["price"];
+                    precioTotal.value = contador;
+                    div2.style.borderColor = "green";
+                }
+            }
+        }
+
+        function remove(ev) {
+            ev.preventDefault();
+            var data = ev.dataTransfer.getData("text");
+            ev.target.appendChild(document.getElementById(data));
+            for(let i = 0; i < products.length; i += 1){
+                if (products[i]["name"] == data)
+                {
+                    contador -= products[i]["price"];
+                    precioTotal.value = contador;
+                    div2.style.borderColor = "red";
+                }
+            }
+        }
+
+        function silla(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function mesa(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function sofa(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        function Armario(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+    </script>
+</head>
+
+<body>
+    <div>
+        <h2>Elige un objeto para comprar</h2><br />
+        <div class="flex" id="div1" ondrop="remove(event)" ondragover="allowDrop(event)">
+            <img width="200px" height="200px" src="img/armario.jpg" id="armario" draggable="true" ondragstart="Armario(event)">
+            <img width="200px" height="200px" src="img/silla.jpg" id="silla" draggable="true" ondragstart="silla(event)">
+            <img width="200px" height="200px" src="img/mesa.jpg" id="mesa" draggable="true" ondragstart="mesa(event)">
+            <img width="200px" height="200px" src="img/sofa.jpg" id="sofa" draggable="true" ondragstart="sofa(event)">
+        </div>
+    </div>
+
+    <h2>Cesta de la compra</h2>
+    <div id="div2" ondrop="add(event)" ondragover="allowDrop(event)"></div>
+    <p><b>Total a pagar:</b><input type="text" id="precioTotal" size='6'>€</p>
+
+</body>
+</html>

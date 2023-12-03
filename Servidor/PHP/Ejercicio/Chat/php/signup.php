@@ -40,8 +40,6 @@
         <input type="text" name="surname" id="surname" placeholder="Apellido">
         <label for="username">Usuario</label>
         <input type="text" name="username" id="username" required placeholder="Usuario">
-        <label for="birthdate">Fecha de nacimiento</label>
-        <input type="date" name="birthdate" id="birthdate">
         <label for="mail">Email</label>
         <input type="email" name="mail" id="mail" placeholder="Mail">
         <label for="pass">Contraseña</label>

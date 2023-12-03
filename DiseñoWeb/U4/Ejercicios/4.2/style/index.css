@@ -1,0 +1,28 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+.video-player {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.controls {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.playlist {
+    margin-top: 20px;
+}
+
+.playlist ul {
+    list-style: none;
+    padding: 0;
+}
+
+.playlist li {
+    margin: 5px 0;
+}
+

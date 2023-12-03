@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulación de Palabras</title>
+    <script>
+        function manipularPalabras() {
+            // Solicitar palabras al usuario
+            var userInput = prompt("Introduce palabras separadas por comas:");
+
+            // Convertir la cadena de entrada en un array
+            var palabras = userInput.split(',');
+
+            // Mostrar la primera palabra introducida
+            alert("A. La primera palabra introducida: " + palabras[0]);
+
+            // Mostrar la última palabra introducida
+            alert("B. La última palabra introducida: " + palabras[palabras.length - 1]);
+
+            // Mostrar el número de palabras presentes en el array
+            alert("C. El número de palabras en el array: " + palabras.length);
+
+            // Ordenar alfabéticamente y mostrar todas las palabras
+            palabras.sort();
+            var resultadoOrdenado = "D. Todas las palabras ordenadas alfabéticamente:\n";
+            for (var i = 0; i < palabras.length; i++) {
+                resultadoOrdenado += i + 1 + ". " + palabras[i] + "\n";
+            }
+            alert(resultadoOrdenado);
+        }
+    </script>
+</head>
+<body>
+    <h1>Manipulación de Palabras</h1>
+    <button onclick="manipularPalabras()">Manipular Palabras</button>
+</body>
+</html>

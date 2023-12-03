@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style/4.1.8.css">
+    <title>Document</title>
+</head>
+<body>
+    <script src="./js/4.1.8.js"></script>
+    <form>
+        <div>
+            <div>
+                <label for="entity">Entidad</label>
+                <input type="number" name="entity" id="entity" maxlength="4">
+            </div>
+            <div>
+                <label for="office">Oficina</label>
+                <input type="number" name="office" id="office" maxlength="4">
+            </div>
+            <div>
+                <label for="controlDigit">D.C.</label>
+                <input type="number" name="controlDigit" id="controlDigit" maxlength="2" disabled placeholder="--">
+            </div>
+            <div>
+                <label for="accNumber">Nº de cuenta</label>
+                <input type="number" name="accNum" id="accNum" maxlength="10">
+            </div>
+        </div>
+        
+        <input type="button" value="Calcular DC" onclick="calculatorDC()">
+        <input type="reset" value="Borrar">
+    </form>
+</body>
+</html>
