@@ -3,14 +3,42 @@ require "../bbdd/config.php";
 require "../bbdd/methods.php";
 require "../php/contact.php";
 
-if (isset($_POST['searchType'])) {
-    $searchType = $_POST['searchType'];
-    $searchData = $_POST['searchData'];
+$searchedContacts = [];
+$error_message = "";
+$lastSearchType = "";
+$lastSearchData = "";
 
-    $searchedContacts = searchContact($database, $searchType, $searchData);
+// Check if the form is submitted
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_POST['searchType']) && isset($_POST['searchData'])) {
+        $searchType = $_POST['searchType'];
+        $searchData = $_POST['searchData'];
 
-    $error_message = "Error en la búsqueda. Por favor, intenta nuevamente.";
-    
+        // Perform the search
+        $searchedContacts = searchContact($database, $searchType, $searchData);
+
+        // Set the searched data in a cookie
+        setcookie('lastSearchType', $searchType, time() + (86400 * 30), "/"); // 86400 = 1 day
+        setcookie('lastSearchData', $searchData, time() + (86400 * 30), "/");
+
+        // Set variables for displaying the last search on refresh
+        $lastSearchType = $searchType;
+        $lastSearchData = $searchData;
+
+        // Display error message if the search fails
+        if (empty($searchedContacts)) {
+            $error_message = "Error en la búsqueda. Por favor, intenta nuevamente.";
+        }
+    }
+} else {
+    // Check if last search cookies exist
+    if (isset($_COOKIE['lastSearchType']) && isset($_COOKIE['lastSearchData'])) {
+        $lastSearchType = $_COOKIE['lastSearchType'];
+        $lastSearchData = $_COOKIE['lastSearchData'];
+
+        // Perform the search using the last search data
+        $searchedContacts = searchContact($database, $lastSearchType, $lastSearchData);
+    }
 }
 ?>
 
@@ -20,6 +48,7 @@ if (isset($_POST['searchType'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/searchContact.css">
     <title>Buscar Contacto</title>
 </head>
 
@@ -30,19 +59,19 @@ if (isset($_POST['searchType'])) {
     <form method="post">
         <label for="searchType">Tipo de búsqueda:</label>
         <select name="searchType" id="searchType">
-            <option value="name">Nombre</option>
-            <option value="surname">Apellido</option>
-            <option value="tel">Teléfono</option>
+            <option value="name" <?php if ($lastSearchType == 'name') echo 'selected'; ?>>Nombre</option>
+            <option value="surname" <?php if ($lastSearchType == 'surname') echo 'selected'; ?>>Apellido</option>
+            <option value="tel" <?php if ($lastSearchType == 'tel') echo 'selected'; ?>>Teléfono</option>
         </select>
 
         <label for="searchData">Datos de búsqueda:</label>
-        <input type="text" name="searchData" id="searchData" required>
+        <input type="text" name="searchData" id="searchData" value="<?php echo $lastSearchData; ?>" required>
 
         <button type="submit">Buscar</button>
     </form>
 
     <?php
-    if (isset($searchedContacts) && !empty($searchedContacts)) {
+    if (!empty($searchedContacts)) {
         echo "<h2>Resultados de la Búsqueda</h2>";
         foreach ($searchedContacts as $contact) {
             echo $contact->name . ", " . $contact->surname . ", " . $contact->tel . "<br>";
@@ -51,6 +80,7 @@ if (isset($_POST['searchType'])) {
         echo "<p>$error_message</p>";
     }
     ?>
+
     <button><a href="../index.php">Ver listado</a></button>
 </body>
 

@@ -37,6 +37,7 @@ require '../db/methods.php';
     </form>
     <button><a href="./login.php">Login como administrador</a></button>
     <button><a href="./insertarProducto.php">Insertar nuevo producto</a></button>
+    <a href="./exportarProducto.php">Exportar a JSON</a>
 
     <?php
     if (isset($_POST["producto"])) {

@@ -1,51 +1,51 @@
 function CheckForm() {
-    let email = document.getElementById("email")
-    let music = document.getElementById("music")
-    let arrive = document.getElementById("arrive")
-    let name = document.getElementById("name")
-    let day = document.getElementById("day")
-    let month = document.getElementById("month")
-    let year = document.getElementById("year")
-    let week_day = document.getElementById("week_day")
-    let friends = document.getElementById("friends")
+    // Validar el correo electrónico
+    var email = document.getElementById('email').value;
+    var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(email)) {
+        alert('Por favor, ingrese una dirección de correo electrónico válida.');
+        return false;
+    }
 
-    let dataSend = "";
+    // Validar la fecha de nacimiento
+    var day = parseInt(document.getElementById('day').value, 10);
+    var month = parseInt(document.getElementById('month').value, 10);
+    var year = parseInt(document.getElementById('year').value, 10);
 
-    var validEmail = /^\w+([.-_+]?\w+)*@\w+([.-]?\w+)*(\.\w{2,10})+$/;
-    if (!(validEmail.test(email.value))) {
-        error += "\t - Email no válido\n";
-        email.value = null;
+    // Verificar si la fecha de nacimiento es válida
+    if (isNaN(day) || isNaN(month) || isNaN(year) || !isValidDate(day, month, year)) {
+        alert('Por favor, ingrese una fecha de nacimiento válida.');
+        return false;
+    }
+
+    // Validar el número de amigos (debe ser un número entero)
+    var friends = document.getElementById('friends').value;
+    var friendsRegex = /^\d+$/;
+    if (!friendsRegex.test(friends)) {
+        alert('Por favor, ingrese un número válido para el número de amigos.');
+        return false;
+    }
+
+    // Confirmar el envío del formulario
+    var confirmationMessage = 'Confirmación de Envío:\n\n';
+    confirmationMessage += 'Correo Electrónico: ' + email + '\n';
+    confirmationMessage += 'Fecha de Nacimiento: ' + day + '/' + month + '/' + year + '\n';
+    confirmationMessage += 'Número de Amigos: ' + friends + '\n';
+
+    if (confirm(confirmationMessage)) {
+        // Aquí puedes agregar código adicional si es necesario antes de enviar el formulario
+        return true;
     } else {
-        dataSend += " - Email: "+email.value + "\n";
+        return false;
     }
+}
 
-    dataSend += " - Musica: "+music.value + "\n";
-    alert("Datos enviados: \n" + dataSend);
-
-
-    let reds = new Array(7)
-    for(let i = 1; i <= 7; i += 1)
-        reds[i - 1] = document.getElementById("red_" + i)
-
-    let dom = [email, music, arrive, name, day, month, year, week_day, friends]
-
-    let counter = 0;
-    for(let i = 0; i < dom.length; i += 1)
-    {
-        if (!dom[i].value)
-        {
-            counter += 1
-            if(i < 7)
-                reds[i].style.border = "solid 1px red"
-        }
-        else
-        {
-                reds[i].style.border = "solid 1px black"
-        }
-    }
-
-    if (counter == 0)
-        return true
-    else
-        return false
+// Función auxiliar para verificar si una fecha es válida
+function isValidDate(day, month, year) {
+    var date = new Date(year, month - 1, day);
+    return (
+        date.getFullYear() === year &&
+        date.getMonth() === month - 1 &&
+        date.getDate() === day
+    );
 }

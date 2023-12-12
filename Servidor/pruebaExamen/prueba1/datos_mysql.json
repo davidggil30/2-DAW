@@ -1,0 +1,25 @@
+{
+    "administrador": [
+        {
+            "usr": "David",
+            "pwd": "$2y$10$WzO4YJyO5INk.96SQtbJnuV\/hH\/OspxIJfyTcozdCfwDaVgslFSGq"
+        }
+    ],
+    "producto": [
+        {
+            "img_ruta": "..\/img\/agua.jpg",
+            "nombre": "agua",
+            "precio": 1
+        },
+        {
+            "img_ruta": "..\/img\/colacao.jpg",
+            "nombre": "colacao",
+            "precio": 2
+        },
+        {
+            "img_ruta": "..\/img\/vino.jpg",
+            "nombre": "vino",
+            "precio": 3
+        }
+    ]
+}

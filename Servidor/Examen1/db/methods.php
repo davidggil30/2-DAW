@@ -29,3 +29,17 @@ function selectProduct($conn, $name)
         return null;
     }
 }
+
+function getAllProducts($conn) {
+    try {
+        $sql = "SELECT * FROM producto"; // Ajusta el nombre de la tabla según tu esquema
+        $stmt = $conn->prepare($sql);
+        $stmt->execute();
+
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        echo "Error al obtener productos: " . $e->getMessage();
+        return array(); // Retorna un array vacío en caso de error
+    }
+}
+

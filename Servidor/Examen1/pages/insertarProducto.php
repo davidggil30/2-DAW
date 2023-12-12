@@ -33,6 +33,8 @@
     </form>
     <button><a href="./verProducto.php">Ver productos</a></button>
 
+    <a href="./exportarProducto.php">Exportar a JSON</a>
+
     <?php
         if(isset($_POST["ruta"]) && isset($_POST["nombre"]) && isset($_POST["precio"])){
             $ruta = $_POST['ruta'];
@@ -40,6 +42,8 @@
             $precio = $_POST['precio'];
             insertProduct($conn, $ruta, $nombre, $precio);
         }
+
+
     ?>
 </body>
 </html>

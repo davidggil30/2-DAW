@@ -11,8 +11,10 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
     function verifyCredentials($conn, $usr, $pwd)
     {
         try {
-            $sql = "SELECT pwd FROM administrador WHERE usr = '$usr'";
-            $stmt = $conn->query($sql);
+            $sql = "SELECT pwd FROM administrador WHERE usr = :usr";
+            $stmt = $conn->prepare($sql);
+            $stmt->bindParam(':usr', $usr);
+            $stmt->execute();
 
             $hashedPwd = $stmt->fetchColumn();
             return password_verify($pwd, $hashedPwd);
@@ -24,7 +26,10 @@ if (isset($_POST['usr']) && isset($_POST['pwd'])) {
 
     // Verificar las credenciales
     if (verifyCredentials($conn, $usr, $pwd)) {
+        $_SESSION['username'] = $usr; // Establecer la sesión
+        session_regenerate_id(); // Regenerar el ID de sesión para mejorar la seguridad
         header("Location: ./insertarProducto.php");
+        exit; // Asegurar que el script se detenga después de la redirección
     } else {
         echo "<p style='color:red;'> Credenciales incorrectas.</p>";
     }

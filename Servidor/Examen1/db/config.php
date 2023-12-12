@@ -8,17 +8,17 @@ $dbname = $config['database']['dbname'];
 try {
     $conn = new PDO("mysql:host=$servername", $username, $password);
     $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    echo "Connected successfully";
+    // echo "Connected successfully";
 } catch (PDOException $e) {
-    echo "Connection failed: " . $e->getMessage();
+    // echo "Connection failed: " . $e->getMessage();
 }
 
 try {
     $sql = "CREATE DATABASE IF NOT EXISTS Tienda";
     $conn->exec($sql);
-    echo "Database created successfully<br>";
+    // echo "Database created successfully<br>";
 } catch (PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
+    // echo $sql . "<br>" . $e->getMessage();
 }
 
 try {
@@ -30,9 +30,9 @@ try {
     )";
 
     $conn->exec($sql);
-    echo "Table 'Producto' created successfully";
+    // echo "Table 'Producto' created successfully";
 } catch (PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
+    // echo $sql . "<br>" . $e->getMessage();
 }
 
 try {
@@ -44,7 +44,7 @@ try {
         pwd VARCHAR(255) NOT NULL
     )";
     $conn->exec($sql);
-    echo "Table 'Administrador' created successfully<br>";
+    // echo "Table 'Administrador' created successfully<br>";
 
     // Verificar si el usuario 'David' ya existe
     $usernameAdmin = "David";
@@ -65,11 +65,11 @@ try {
         $stmt->bindParam(':pwd', $hashedPasswordAdmin);
         $stmt->execute();
 
-        echo "Admin user 'David' created successfully";
+        // echo "Admin user 'David' created successfully";
     } else {
-        echo "Admin user 'David' already exists";
+        // echo "Admin user 'David' already exists";
     }
 } catch (PDOException $e) {
-    echo $sql . "<br>" . $e->getMessage();
+    // echo $sql . "<br>" . $e->getMessage();
 }
 

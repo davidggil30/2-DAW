@@ -31,10 +31,6 @@ function enviar() {
     alert(error);
     errores.innerHTML = error;
     errores.style.border = "solid 1px red";
-
-    
-
-    
 }
 
 function validaCalles() {

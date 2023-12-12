@@ -84,7 +84,7 @@ require './methods.php';
 
 <body>
     <h3>INSERTA UN NUEVO ALUMNO</h3>
-    <form action="indexInsert.php" method="POST">
+    <form action="index.php" method="POST">
         <label for="firstname">Nombre: </label>
         <input type="text" name="firstname" id="firstname" placeholder="nombre" required>
         <label for="lastname">Apellido</label>
